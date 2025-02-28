@@ -1,0 +1,173 @@
+<main class="content-wrapper">
+    <div class="container pt-4 pb-5 mb-xxl-3">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="pb-2 pb-md-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home-real-estate.html">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="listings-real-estate.html">Terrains à louer</a></li>
+                <li aria-current="page" class="breadcrumb-item active">127 Virginia Street, Lomé</li>
+            </ol>
+        </nav>
+        <!-- Image gallery -->
+        <div class="row g-3 g-lg-4">
+            @for (image of land.images; track $index) {
+            <div class="col-md-8">
+                <a class="hover-effect-scale hover-effect-opacity position-relative d-flex rounded overflow-hidden"
+                    data-gallery="image-gallery" data-glightbox="" href="{{url}}{{image}}">
+                    <i class="fi-zoom-in hover-effect-target fs-3 text-white position-absolute top-50 start-50 translate-middle opacity-0 z-2"></i>
+                    <span class="hover-effect-target position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-25 opacity-0 z-1"></span>
+                    <div class="ratio hover-effect-target bg-body-tertiary rounded" style="--fn-aspect-ratio: calc(450 / 856 * 100%)">
+                        <img alt="Image" src="{{url}}{{image}}" />
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="hover-effect-scale hover-effect-opacity position-relative d-flex rounded overflow-hidden"
+                    data-gallery="image-gallery" data-glightbox="" href="{{url}}{{image}}">
+                    <i class="fi-zoom-in hover-effect-target fs-3 text-white position-absolute top-50 start-50 translate-middle opacity-0 z-2"></i>
+                    <span class="hover-effect-target position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-25 opacity-0 z-1"></span>
+                    <div class="ratio hover-effect-target bg-body-tertiary rounded" style="--fn-aspect-ratio: calc(450 / 856 * 100%)">
+                        <img alt="Image" src="{{url}}{{image}}" />
+                    </div>
+                </a>
+            </div>
+            }
+        </div>
+        <!-- Listing details -->
+        <div class="row pt-4 pb-2 pb-sm-3 pb-md-4 py-lg-5 mt-sm-2 mt-lg-0">
+            <!-- Content sections -->
+            <div class="col-lg-8 col-xl-7 pb-3 pb-sm-0 mb-4 mb-sm-5 mb-lg-0">
+                <!-- Badges + Sharing and wishlist buttons -->
+                <div class="d-flex align-items-center justify-content-between gap-4 mb-3">
+                    <div class="d-flex gap-2">
+                        <span class="badge text-bg-info d-inline-flex align-items-center">
+                            Vérifié
+                            <i class="fi-shield ms-1"></i>
+                        </span>
+                        <span class="badge text-bg-primary">Nouveau</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <div class="dropdown" data-bs-custom-class="tooltip-sm" data-bs-original-title="Partager" data-bs-toggle="tooltip">
+                            <button aria-expanded="false" aria-haspopup="true" aria-label="Partager"
+                                class="btn btn-icon btn-secondary bg-transparent border-0 animate-scale"
+                                data-bs-toggle="dropdown" type="button">
+                                <i class="fi-share-2 animate-target fs-base"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" style="--fn-dropdown-min-width: 9.5rem">
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="fi-facebook fs-base me-2"></i>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="fi-instagram fs-base me-2"></i>
+                                        Instagram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fi-linkedin fs-base me-2"></i>
+                                        LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button aria-label="Favoris" class="btn btn-icon btn-secondary bg-transparent border-0 animate-pulse"
+                            data-bs-custom-class="tooltip-sm" data-bs-original-title="Favoris" data-bs-toggle="tooltip" type="button">
+                            <i class="fi-heart animate-target fs-base"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Price + Address + Facilities -->
+                <div class="h3 pb-1 mb-2">{{land.prix | number}} FCFA</div>
+                <p class="fs-sm pb-1 mb-2">{{land.adresse}}, {{land.ville}}</p>
+                <div class="d-flex gap-2 mb-4">
+                    <div class="d-flex align-items-center fs-sm gap-1 me-2">
+                        <i class="fi-ruler fs-base text-secondary-emphasis"></i>
+                        {{land.surface}} m²
+                    </div>
+                    <div class="d-flex align-items-center fs-sm gap-1 me-2" *ngIf="land.aeau">
+                        <i class="fi-water fs-base text-secondary-emphasis"></i>
+                        Eau
+                    </div>
+                    <div class="d-flex align-items-center fs-sm gap-1 me-2" *ngIf="land.aelectricite">
+                        <i class="fi-lightning fs-base text-secondary-emphasis"></i>
+                        Électricité
+                    </div>
+                </div>
+
+                <!-- About -->
+                <h2 class="h5 pt-4 pt-sm-5 mt-3 mt-sm-0">Description</h2>
+                <p class="fs-sm">{{land.description}}</p>
+
+                <!-- General info -->
+                <h2 class="h5 pt-4 pt-sm-5 mt-3 mt-sm-0">Informations générales</h2>
+                <table class="table table-borderless w-auto fs-sm">
+                    <tbody>
+                        <tr>
+                            <th class="py-2 ps-0 pe-3" scope="row">Type de bien</th>
+                            <td class="text-body py-2">Terrain</td>
+                        </tr>
+                        <tr>
+                            <th class="py-2 ps-0 pe-3" scope="row">Surface</th>
+                            <td class="text-body py-2">{{land.surface}} m²</td>
+                        </tr>
+                        <tr>
+                            <th class="py-2 ps-0 pe-3" scope="row">District</th>
+                            <td class="text-body py-2">{{land.district}}</td>
+                        </tr>
+                        <tr>
+                            <th class="py-2 ps-0 pe-3" scope="row">Prix négociable</th>
+                            <td class="text-body py-2">{{land.negociable ? 'Oui' : 'Non'}}</td>
+                        </tr>
+                        <tr>
+                            <th class="py-2 ps-0 pe-3" scope="row">Constructible</th>
+                            <td class="text-body py-2">{{land.constructible ? 'Oui' : 'Non'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Amenities -->
+                <h2 class="h5 pt-4 pt-sm-5 mt-3 mt-sm-0">Caractéristiques</h2>
+                <div class="row row-cols-2 row-cols-sm-3 fs-sm gy-3">
+                    <div class="col d-flex align-items-center" *ngFor="let caracteristique of land.caracteristiques">
+                        <i class="fi-check fs-lg me-2"></i>
+                        {{caracteristique}}
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <h2 class="h5 pt-4 pt-sm-5 mt-3 mt-sm-0">Localisation</h2>
+                <!-- Google map -->
+                <iframe allowfullscreen="" class="border rounded" height="350" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d1.2288359!3d6.1931459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTEnMzUuMyJOIDHCsDEzJzQzLjgiRQ!5e0!3m2!1sfr!2stg!4v1623012345678!5m2!1sfr!2stg"
+                    style="border: 0" title="Map" width="100%"></iframe>
+
+                <!-- Meta -->
+                <div class="d-flex align-items-center justify-content-between gap-3 pt-4">
+                    <div class="d-flex gap-3 fs-sm">
+                        <div>ID: <span class="fw-medium text-dark-emphasis">{{land.trackingId}}</span></div>
+                        <div>Vues: <span class="fw-medium text-dark-emphasis">{{land.nombreAvis}}</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="col-lg-4 offset-xl-1">
+                <div class="sticky-lg-top">
+                    <div class="bg-body-tertiary rounded p-4">
+                        <div class="p-sm-2 p-lg-0 p-xl-2">
+                            <button class="btn btn-lg btn-primary w-100 mb-3" data-bs-target="#contactForm"
+                                data-bs-toggle="modal" type="button">Contacter</button>
+                            <button class="btn btn-lg btn-outline-dark w-100" data-bs-target="#tourBooking"
+                                data-bs-toggle="modal" type="button">Planifier une visite</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>

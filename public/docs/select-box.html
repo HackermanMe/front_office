@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" data-pwa="true" dir="ltr" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Finder Docs | Select box</title>
+<!-- Theme switcher (color modes) -->
+<script src="../assets/js/theme-switcher.js"></script>
+<!-- Webmanifest + Favicon / App icons -->
+<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../manifest.json" rel="manifest"/>
+<link href="../assets/app-icons/icon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/app-icons/icon-180x180.png" rel="apple-touch-icon"/>
+<!-- Preloaded local web font (Inter) -->
+<link as="font" crossorigin="" href="../assets/fonts/inter-variable-latin.woff2" rel="preload" type="font/woff2"/>
+<!-- Font icons -->
+<link as="font" crossorigin="" href="../assets/icons/finder-icons.woff2" rel="preload" type="font/woff2"/>
+<link href="../assets/icons/finder-icons.min.css" rel="stylesheet"/>
+<!-- Vendor styles -->
+<link href="../ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<link href="../assets/vendor/simplebar/simplebar.min.css" rel="stylesheet"/>
+<link href="../assets/vendor/choices.js/choices.min.css" rel="stylesheet"/>
+<!-- Bootstrap + Theme styles -->
+<link as="style" href="../assets/css/theme.min.css" rel="preload"/>
+<link as="style" href="../assets/css/theme.rtl.min.css" rel="preload"/>
+<link href="../assets/css/theme.min.css" id="theme-styles" rel="stylesheet"/>
+<!-- Customizer -->
+<script src="../assets/js/customizer.min.js"></script><style id="customizer-styles">:root,[data-bs-theme="light"]{}[data-bs-theme="dark"]{}.btn-primary{}.btn-success{}.btn-warning{}.btn-danger{}.btn-info{}.btn-outline-primary{}.btn-outline-success{}.btn-outline-warning{}.btn-outline-danger{}.btn-outline-info{}</style>
+<!-- Docs specific styles -->
+<style>
+      .docs-section {
+        scroll-margin-top: 100px;
+      }
+      @media (min-width: 992px) {
+        .docs-sidebar {
+          position: sticky;
+          top: 7rem;
+          height: calc(100vh - 8.5rem);
+        }
+        .docs-section {
+          scroll-margin-top: 118px;
+        }
+      }
+    </style>
+</head>
+<!-- Body -->
+<body data-bs-spy="scroll" data-bs-target="#anchorNav">
+<!-- Customizer offcanvas -->
+<div class="offcanvas offcanvas-end" id="customizer" tabindex="-1">
+<div class="offcanvas-header border-bottom">
+<h4 class="h5 offcanvas-title">Customize theme</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<!-- Customizer settings -->
+<div class="customizer-collapse collapse show" id="customizerSettings">
+<!-- Colors -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center mb-3">
+<i class="fi-swatches text-body-tertiary fs-5 me-2"></i>
+<h5 class="fs-lg mb-0">Colors</h5>
+</div>
+<div class="row row-cols-2 g-3" id="theme-colors">
+<div class="col">
+<h6 class="fs-sm mb-2">Primary</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-primary", "primary", "primary-rgb"]' id="theme-primary">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#d85151"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="primary" style="max-width: 38px; background-color: #d85151"></label>
+<input class="visually-hidden" id="primary" type="color" value="#d85151"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Success</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-success", "success", "success-rgb"]' id="theme-success">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#33b36b"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="success" style="max-width: 38px; background-color: #33b36b"></label>
+<input class="visually-hidden" id="success" type="color" value="#33b36b"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Warning</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-warning", "warning", "warning-rgb"]' id="theme-warning">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#fc9231"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="warning" style="max-width: 38px; background-color: #fc9231"></label>
+<input class="visually-hidden" id="warning" type="color" value="#fc9231"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Danger</h6>
+<div class="color-swatch d-flex border rounded gap-2 p-2" data-color-labels='["theme-danger", "danger", "danger-rgb"]' id="theme-danger">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#f03d3d"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="danger" style="max-width: 38px; background-color: #f03d3d"></label>
+<input class="visually-hidden" id="danger" type="color" value="#f03d3d"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Info</h6>
+<div class="color-swatch d-flex border rounded gap-2 p-2" data-color-labels='["theme-info", "info", "info-rgb"]' id="theme-info">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#3d7a81"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="info" style="max-width: 38px; background-color: #3d7a81"></label>
+<input class="visually-hidden" id="info" type="color" value="#3d7a81"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Direction -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-sort text-body-tertiary fs-lg me-2" style="transform: rotate(90deg)"></i>
+<h5 class="fs-lg mb-0">Direction</h5>
+</div>
+<div class="d-flex align-items-center justify-content-between border rounded p-3">
+<div class="me-3">
+<h6 class="mb-1">RTL</h6>
+<p class="fs-sm mb-0">Change text direction</p>
+</div>
+<div class="form-check form-switch m-0">
+<input class="form-check-input" id="rtl-switch" role="switch" type="checkbox"/>
+</div>
+</div>
+<div class="alert alert-info p-2 mt-2 mb-0">
+<div class="d-flex text-body-emphasis fs-xs py-1 pe-1">
+<i class="fi-info text-info fs-lg mb-2 mb-sm-0" style="margin-top: .125rem"></i>
+<div class="ps-2">To switch the text direction of your webpage from LTR to RTL, please consult the detailed instructions provided in the relevant section of our documentation.</div>
+</div>
+</div>
+</div>
+<!-- Border width -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-menu text-body-tertiary fs-lg me-2"></i>
+<h5 class="fs-lg mb-0">Border width, px</h5>
+</div>
+<div class="slider-input d-flex align-items-center gap-3 border rounded p-3" id="border-input">
+<input class="form-range" max="10" min="0" step="1" type="range" value="1"/>
+<input class="form-control" id="border-width" max="10" min="0" style="max-width: 5.5rem" type="number" value="1"/>
+</div>
+</div>
+<!-- Rounding -->
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-maximize text-body-tertiary fs-lg me-2"></i>
+<h5 class="fs-lg mb-0">Rounding, rem</h5>
+</div>
+<div class="slider-input d-flex align-items-center gap-3 border rounded p-3">
+<input class="form-range" max="5" min="0" step=".05" type="range" value="0.5"/>
+<input class="form-control" id="border-radius" max="5" min="0" step=".05" style="max-width: 5.5rem" type="number" value="0.5"/>
+</div>
+</div>
+<!-- Customizer code -->
+<div class="customizer-collapse collapse" id="customizerCode">
+<div class="nav mb-3">
+<a aria-controls="customizerSettings customizerCode" aria-expanded="true" class="nav-link position-relative fs-base p-0" data-bs-toggle="collapse" href=".customizer-collapse">
+<i class="fi-chevron-left fs-lg ms-n1 me-1"></i>
+<span class="hover-effect-underline stretched-link">Back to settings</span>
+</a>
+</div>
+<p class="fs-sm pb-1">To apply the provided styles to your webpage, enclose them within a <code>&lt;style&gt;</code> tag and insert this tag into the <code>&lt;head&gt;</code> section of your HTML document after the following link to the main stylesheet:<br/><code>&lt;link href="assets/css/theme.min.css"&gt;</code></p>
+<div class="position-relative bg-body-tertiary rounded overflow-hidden pt-3">
+<div class="position-absolute top-0 start-0 w-100 p-3">
+<button class="btn btn-sm btn-outline-dark w-100" data-copy-text-from="#generated-styles" data-done-label="Code copied" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                Copy code
+              </button>
+</div>
+<pre class="text-wrap bg-transparent border-0 fs-xs text-body-emphasis p-4 pt-5" id="generated-styles"></pre>
+</div>
+</div>
+</div>
+<!-- Offcanvas footer (Action buttons) -->
+<div class="offcanvas-header border-top gap-3 d-none" id="customizer-btns">
+<button class="btn btn-lg btn-secondary w-100 fs-sm" id="customizer-reset" type="button">
+<i class="fi-trash fs-lg me-2 ms-n1"></i>
+          Reset
+        </button>
+<button aria-controls="customizerSettings customizerCode" aria-expanded="false" class="btn btn-lg btn-primary hiding-collapse-toggle w-100 fs-sm collapsed" data-bs-target=".customizer-collapse" data-bs-toggle="collapse" type="button">
+<i class="fi-code fs-lg me-2 ms-n1"></i>
+          Show code
+        </button>
+</div>
+</div>
+<!-- Navigation bar (Header) -->
+<header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top z-fixed px-0" data-bs-theme="dark">
+<div class="container py-1 py-lg-2">
+<button aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle sidebar navigation" class="navbar-toggler me-3" data-bs-target="#sidebarNav" data-bs-toggle="offcanvas" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<a class="navbar-brand mx-auto mx-lg-0" href="../index.html">
+<span class="d-flex flex-shrink-0 text-primary rtl-flip me-2">
+<svg height="34" width="35" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 16.894v10.731c0 3.506-2.869 6.375-6.375 6.375H17.5h-.85C7.725 33.575.5 26.138.5 17c0-9.35 7.65-17 17-17s17 7.544 17 16.894z" fill="currentColor"></path><g fill-rule="evenodd"><path d="M17.5 13.258c-3.101 0-5.655 2.554-5.655 5.655s2.554 5.655 5.655 5.655 5.655-2.554 5.655-5.655-2.554-5.655-5.655-5.655zm-9.433 5.655c0-5.187 4.246-9.433 9.433-9.433s9.433 4.246 9.433 9.433a9.36 9.36 0 0 1-1.569 5.192l2.397 2.397a1.89 1.89 0 0 1 0 2.671 1.89 1.89 0 0 1-2.671 0l-2.397-2.397a9.36 9.36 0 0 1-5.192 1.569c-5.187 0-9.433-4.246-9.433-9.433z" fill="#000" fill-opacity=".05"></path><g fill="#fff"><path d="M17.394 10.153c-3.723 0-6.741 3.018-6.741 6.741s3.018 6.741 6.741 6.741 6.741-3.018 6.741-6.741-3.018-6.741-6.741-6.741zM7.347 16.894A10.05 10.05 0 0 1 17.394 6.847 10.05 10.05 0 0 1 27.44 16.894 10.05 10.05 0 0 1 17.394 26.94 10.05 10.05 0 0 1 7.347 16.894z"></path><path d="M23.025 22.525c.645-.645 1.692-.645 2.337 0l3.188 3.188c.645.645.645 1.692 0 2.337s-1.692.645-2.337 0l-3.187-3.187c-.645-.646-.645-1.692 0-2.337z"></path></g></g><path d="M23.662 14.663c2.112 0 3.825-1.713 3.825-3.825s-1.713-3.825-3.825-3.825-3.825 1.713-3.825 3.825 1.713 3.825 3.825 3.825z" fill="#fff"></path><path d="M23.663 8.429a2.41 2.41 0 0 0-2.408 2.408 2.41 2.41 0 0 0 2.408 2.408 2.41 2.41 0 0 0 2.408-2.408 2.41 2.41 0 0 0-2.408-2.408zm-5.242 2.408c0-2.895 2.347-5.242 5.242-5.242s5.242 2.347 5.242 5.242-2.347 5.242-5.242 5.242-5.242-2.347-5.242-5.242z" fill="currentColor" fill-rule="evenodd"></path></svg>
+</span>
+          Finder
+          <span class="badge text-primary bg-primary bg-opacity-10 fs-xs rounded-pill d-none d-lg-inline-block ms-2">v2.0.0</span>
+</a>
+<div aria-labelledby="navbarNavLabel" class="offcanvas-lg offcanvas-end ms-auto" id="navbarNav" tabindex="-1">
+<div class="offcanvas-header py-3">
+<h5 class="offcanvas-title" id="navbarNavLabel">Finder</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarNav" type="button"></button>
+</div>
+<div class="offcanvas-body pt-0">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="installation.html">Docs</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" href="typography.html">Components</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../index.html">Live demo</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://createx.studio/contact" rel="noreferrer" target="_blank">Support</a>
+</li>
+</ul>
+</div>
+<div class="offcanvas-header border-top">
+<a class="btn btn-primary w-100" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" rel="noreferrer" target="_blank">
+<i class="fi-shopping-bag fs-base ms-n1 me-2"></i>
+              Buy now
+            </a>
+</div>
+</div>
+<div class="dropdown pe-lg-1 ms-lg-3">
+<button aria-expanded="false" aria-label="Toggle theme (light)" class="theme-switcher btn btn-icon btn-secondary fs-base rounded-circle animate-scale" data-bs-toggle="dropdown" type="button">
+<span class="theme-icon-active d-flex animate-target">
+<i class="fi-sun"></i>
+</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end" style="--fn-dropdown-spacer: .625rem; --fn-dropdown-min-width: 9rem">
+<li>
+<button aria-pressed="true" class="dropdown-item active" data-bs-theme-value="light" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-sun"></i>
+</span>
+<span class="theme-label">Light</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+<li>
+<button aria-pressed="false" class="dropdown-item" data-bs-theme-value="dark" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-moon"></i>
+</span>
+<span class="theme-label">Dark</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+<li>
+<button aria-pressed="false" class="dropdown-item" data-bs-theme-value="auto" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-auto"></i>
+</span>
+<span class="theme-label">Auto</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+</ul>
+</div>
+<button aria-controls="navbarNav" aria-label="Toggle navbar navigation" class="btn btn-icon btn-outline-secondary border-0 d-lg-none ms-2 me-n2" data-bs-target="#navbarNav" data-bs-toggle="offcanvas" type="button">
+<i class="fi-more-horizontal fs-3"></i>
+</button>
+<a class="btn btn-primary animate-shake d-none d-lg-inline-flex ms-4" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" rel="noreferrer" target="_blank">
+<i class="fi-shopping-bag fs-base animate-target ms-n1 me-2"></i>
+          Buy now
+        </a>
+</div>
+</header>
+<!-- Page container -->
+<div class="container pt-4">
+<div class="row pt-sm-2">
+<!-- Sidebar navigation -->
+<aside class="col-lg-3 pe-xl-4">
+<div class="docs-sidebar" data-filter-list='{"searchClass": "docs-search", "listClass": "docs-list", "valueNames": ["list-group-item"]}'>
+<div aria-labelledby="sidebarNavLabel" class="offcanvas-lg offcanvas-start d-flex flex-column h-100" id="sidebarNav" tabindex="-1">
+<div class="offcanvas-header py-3">
+<h5 class="offcanvas-title" id="sidebarNavLabel">Browse docs</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarNav" type="button"></button>
+</div>
+<div class="position-relative mx-4 ms-lg-0 mb-4">
+<i class="fi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+<input class="docs-search form-control form-icon-start" placeholder="Quick search..." type="search"/>
+<button class="btn btn-sm btn-outline-secondary w-auto border-0 p-1 position-absolute top-50 end-0 translate-middle-y me-2 opacity-0">
+<svg class="opacity-75" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+<path d="M18.619 5.381a.875.875 0 0 1 0 1.238l-12 12A.875.875 0 0 1 5.38 17.38l12-12a.875.875 0 0 1 1.238 0Z"></path><path d="M5.381 5.381a.875.875 0 0 1 1.238 0l12 12a.875.875 0 1 1-1.238 1.238l-12-12a.875.875 0 0 1 0-1.238Z"></path>
+</svg>
+</button></div>
+<div class="offcanvas-body d-block flex-grow-1 overflow-hidden pt-0 pe-0 pb-lg-2">
+<div class="h-100 overflow-y-auto pe-4 simplebar-scrollable-y" data-simplebar="init" id="scrollable"><div class="simplebar-wrapper" style="margin: 0px -24px 0px 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div aria-label="scrollable content" class="simplebar-content-wrapper" role="region" style="height: 100%; overflow: hidden scroll;" tabindex="0"><div class="simplebar-content" style="padding: 0px 24px 0px 0px;">
+<nav class="docs-list list-group list-group-borderless" onclick="closeSidebar()"><h3 class="h6 d-flex align-items-center pb-1 mb-2">
+<i class="fi-book fs-lg text-success me-2"></i>
+                      Getting started
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="installation.html">
+                        Installation
+                        <span class="visually-hidden">setup npm prerequisites</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle text-wrap pe-3" href="npm-scripts.html">
+                        Npm commands (Scripts)
+                        <span class="visually-hidden">dev build styles:compile styles:minify scripts:compile scripts:minify icon-font vendor validate watch dist</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="structure.html">
+                        File structure
+                        <span class="visually-hidden">project folders</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="configuration.html">
+                        Configuration files
+                        <span class="visually-hidden">package.json config.js babelrc browserslistrc editorconfig eslintrc gitignore htmlvalidate prettierignore prettierrc stylelintrc webmanifest manifest.json</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle text-wrap pe-3" href="pwa.html">
+                        Progressive Web App (PWA)
+                        <span class="visually-hidden">service worker manifest</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="web-font.html">
+                        Web font(s)
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="icon-font.html">
+                        Icon font
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="performance.html">
+                        Performance: CLS &amp; Preload
+                        <span class="visually-hidden">cumulative layout shift loading aspect-ratio</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="browser-support.html">
+                        Browser support
+                        <span class="visually-hidden">autoprefixer</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="rtl.html">Right-to-Left (RTL)</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="deployment.html">
+                        Deployment guide
+                        <span class="visually-hidden">launch hosting publishing rollout go-live</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="credits.html">
+                        Sources and credits
+                        <span class="visually-hidden">resources plugins libraries frameworks assets</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="changelog.html">
+                        Changelog
+                        <span class="visually-hidden">updates</span>
+</a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-settings fs-lg text-primary me-2"></i>
+                      Customize
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="options.html">
+                        Global options
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="colors.html">
+                        Colors
+                        <span class="visually-hidden">grayscale primary secondary info warning success danger dark light</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3 text-wrap" href="color-modes.html">
+                        Color modes (Light/Dark)
+                        <span class="visually-hidden">themes</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="css-variables.html">
+                        CSS variables
+                      </a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-file-text fs-lg text-secondary me-2"></i>
+                      Content
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="typography.html">
+                        Typography
+                        <span class="visually-hidden">text font heading title paragraph list ordered unordered description blockquote quotation abbreviation</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="icons.html">Icons</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="code.html">
+                        Code
+                        <span class="visually-hidden">pre kbd highlight</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="images.html">
+                        Images &amp; figures
+                        <span class="visually-hidden">thumbnails picture</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tables.html">
+                        Tables
+                      </a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-layers fs-lg text-info me-2"></i>
+                      Components
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="accordion.html">
+                        Accordion
+                        <span class="visually-hidden">collapse</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="alerts.html">
+                        Alerts
+                        <span class="visually-hidden">notification callout</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="badges.html">
+                        Badges
+                        <span class="visually-hidden">count indicator</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="blog-components.html">
+                        Blog components
+                        <span class="visually-hidden">post article</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="breadcrumb.html">
+                        Breadcrumb
+                        <span class="visually-hidden">navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="buttons.html">
+                        Buttons
+                        <span class="visually-hidden">navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="button-group.html">
+                        Button group
+                        <span class="visually-hidden">navigation link</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="card.html">
+                        Card
+                        <span class="visually-hidden">box container</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="carousel.html">
+                        Carousel (Slider)
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="categories.html">
+                        Categories
+                        <span class="visually-hidden">listing directory filter links navigation cards</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="collapse.html">
+                        Collapse
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="countdown.html">
+                        Countdown
+                        <span class="visually-hidden">timer</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="date-picker.html">
+                        Date / time picker
+                        <span class="visually-hidden">calendar form control input select</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="dropdowns.html">
+                        Dropdowns
+                        <span class="visually-hidden">navigation menu submenu overlay links dropend dropstart dropup</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="filter-widgets.html">
+                        Filter widgets
+                        <span class="visually-hidden">sidebar sort</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="forms.html">
+                        Forms
+                        <span class="visually-hidden">input select textarea checkbox radio range slider picker floating label validation control file switch quantity</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="image-comparison-slider.html">
+                        Image comparison slider
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="input-group.html">
+                        Input group
+                        <span class="visually-hidden">form control select textarea addon</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="input-formatter.html">
+                        Input text formatter
+                        <span class="visually-hidden">form control mask</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="lightbox.html">
+                        Lightbox (Gallery)
+                        <span class="visually-hidden">popup modal overlay image picture video youtube vimeo iframe</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="list-group.html">
+                        List group
+                        <span class="visually-hidden">navigation links menu ordered unordered</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="listing-cards.html">
+                        Listing cards
+                        <span class="visually-hidden">product service item entry summary</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="map.html">
+                        Map
+                        <span class="visually-hidden">location directions</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="modal.html">
+                        Modal
+                        <span class="visually-hidden">dialog popup overlay lightbox</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="nav-links.html">
+                        Nav links
+                        <span class="visually-hidden">navigation menu links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="navbar.html">
+                        Navbar
+                        <span class="visually-hidden">header navigation menu submenu links brand logo</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="offcanvas.html">
+                        Offcanvas
+                        <span class="visually-hidden">drawer overlay sidebar</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="pagination.html">
+                        Pagination
+                        <span class="visually-hidden">pager navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="pills.html">
+                        Pills
+                        <span class="visually-hidden">navigation links tabs</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="placeholders.html">
+                        Placeholders
+                        <span class="visually-hidden">loading loader</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="popovers.html">
+                        Popovers
+                        <span class="visually-hidden">tooltip overlay popup</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="pricing.html">
+                        Pricing
+                        <span class="visually-hidden">price cost subscription membership payment tier plan package</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="progress.html">
+                        Progress
+                        <span class="visually-hidden">bars status circular</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="reviews.html">
+                        Reviews
+                        <span class="visually-hidden">testimonials feedback stars rating</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="scrollbar.html">
+                        Scrollbar
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="scrollspy.html">
+                        Scrollspy
+                        <span class="visually-hidden">anchor links navigation menu</span>
+</a>
+</div><div class="dropdown">
+<span class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3 pe-none active">
+                        Select box
+                        <span class="visually-hidden">tags choices input form multiple control</span>
+</span>
+<ul class="nav nav-underline flex-column border-start ms-2 my-2" id="anchorNav" style="gap: .25rem;">
+<li class="nav-item"><a class="nav-link fw-normal" href="#select-basic">Basic select</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#select-search">Search and option groups</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#select-multiple">Multiple select</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#select-tags-input">Tags input</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#select-custom-template">Custom option template</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#select-sizes-shapes">Sizes and shapes</a></li>
+</ul>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="spinners.html">
+                        Spinners
+                        <span class="visually-hidden">loading loader</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tabs.html">
+                        Tabs
+                        <span class="visually-hidden">navigation links underline</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="toasts.html">
+                        Toasts
+                        <span class="visually-hidden">notification overlay popup alert feedback</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tooltips.html">
+                        Tooltips
+                        <span class="visually-hidden">overlay popup popover</span>
+</a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-tool fs-lg text-warning me-2"></i>
+                      Utilities &amp; helpers
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="utilities.html">
+                        Finder utilities
+                        <span class="visually-hidden">border background cursor</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="https://getbootstrap.com/docs/5.3/utilities/background/" rel="noreferrer" target="_blank">
+                        Bootstrap utilities
+                        <span class="visually-hidden">border background color text font size position weight display opacity flex space spacing align visibility overflow object float shadow</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="https://getbootstrap.com/docs/5.3/helpers/clearfix/" rel="noreferrer" target="_blank">
+                        Bootstrap helpers
+                        <span class="visually-hidden">position ratio stacks stretched link focus truncation rule</span>
+</a>
+</div></nav>
+</div></div></div></div><div class="simplebar-placeholder" style="width: 294px; height: 3464px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 219px; transform: translate3d(0px, 653px, 0px); display: block;"></div></div></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Page content -->
+<main class="col-lg-9 pt-1 pb-5 mb-sm-2 mb-md-3">
+<!-- Page title -->
+<section class="pt-2 pb-md-2">
+<span class="badge d-inline-flex align-items-center text-info bg-info-subtle fw-semibold text-decoration-none py-2 px-3 mb-2 rounded-pill">Finder component</span>
+<h1 class="pt-1">Select box</h1>
+<p class="text-body-secondary mb-4">Single / multiple select with search and sorting, tags components.</p>
+</section>
+<!-- Info alert -->
+<section class="alert d-sm-flex text-body-emphasis bg-info-subtle border-0 py-4 mb-5">
+<i class="fi-info text-info fs-4 mb-2 mb-sm-0"></i>
+<div class="ps-sm-3 pe-sm-5 w-100">
+<p>The Select box component relies on the <a class="alert-link" href="https://github.com/Choices-js/Choices" rel="noreferrer" target="_blank">Choices.js</a> plugin. To use this component, ensure to include the required reference to the plugin's .css and .js files.</p>
+<p class="mb-2">CSS file is linked in the <code>&lt;head&gt;</code> section and above <code>theme.min.css</code> reference in your document:</p>
+<pre class="code-highlight border mb-3" data-bs-theme="dark"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"assets/vendor/choices.js/public/assets/styles/choices.min.css"</span>&gt;</span></code></pre>
+<p class="mb-2">JavaScript file is linked before the closing <code>&lt;/body&gt;</code> tag and above <code>theme.min.js</code> reference in your document:</p>
+<pre class="code-highlight border" data-bs-theme="dark"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"assets/vendor/choices.js/public/assets/scripts/choices.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p class="pt-3 pb-2 mt-2">You can apply virtually any Choices.js option by specifying it within the <code>data-select="{}"</code> attribute.</p>
+<div class="h6">Usefull links:</div>
+<ul class="list-unstyled d-inline-block mb-0">
+<li class="mb-2">
+<a class="d-flex alert-link fw-medium text-decoration-none" href="https://choices-js.github.io/Choices/" rel="noopener" target="_blank">
+<i class="fi-external-link mt-1 me-2"></i>
+                    All Choices.js possible configuration demos
+                  </a>
+</li>
+<li class="mb-2">
+<a class="d-flex alert-link fw-medium text-decoration-none" href="https://github.com/Choices-js/Choices?tab=readme-ov-file#setup" rel="noopener" target="_blank">
+<i class="fi-external-link mt-1 me-2"></i>
+                    Choices.js API: options, methods and events</a>
+</li>
+</ul>
+</div>
+</section>
+<!-- Basic select -->
+<section class="docs-section pb-sm-2 mb-5" id="select-basic">
+<h4>Basic select</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded z-0" style="opacity: .4"></span>
+<div class="card-body position-relative">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-1" aria-selected="true" class="nav-link active" data-bs-target="#preview-1" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-1" aria-selected="false" class="nav-link" data-bs-target="#html-1" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-1" role="tabpanel">
+<div class="mb-4" style="max-width: 400px">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select"><select aria-label="Basic select example" class="form-select choices__input" data-choice="active" data-select="" hidden="" tabindex="-1">
+<option selected="" value="">Choose name...</option>
+<option value="Emily Johnson">Emily Johnson</option>
+<option value="Michael Davis">Michael Davis</option>
+<option value="Jessica Smith">Jessica Smith</option>
+<option value="Christopher Taylor">Christopher Taylor</option>
+<option value="Olivia Anderson">Olivia Anderson</option>
+<option value="Ethan Williams">Ethan Williams</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Choose name...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--d5x7-item-choice-1" role="option">Choose name...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="Emily Johnson" id="choices--d5x7-item-choice-2" role="option">Emily Johnson</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="Michael Davis" id="choices--d5x7-item-choice-3" role="option">Michael Davis</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="Jessica Smith" id="choices--d5x7-item-choice-4" role="option">Jessica Smith</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="5" data-value="Christopher Taylor" id="choices--d5x7-item-choice-5" role="option">Christopher Taylor</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="6" data-value="Olivia Anderson" id="choices--d5x7-item-choice-6" role="option">Olivia Anderson</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="7" data-value="Ethan Williams" id="choices--d5x7-item-choice-7" role="option">Ethan Williams</div></div></div></div>
+</div>
+<div style="max-width: 400px">
+<div aria-disabled="true" aria-expanded="false" aria-haspopup="true" class="choices is-disabled" data-type="select-one" role="listbox" tabindex="-1"><div class="form-select"><select aria-label="Disabled select example" class="form-select choices__input" data-choice="active" data-select="" disabled="" hidden="" tabindex="-1">
+<option selected="" value="">Disabled select</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+<option value="4">Option 4</option>
+<option value="5">Option 5</option>
+</select><div class="choices__list choices__list--single"><div aria-disabled="true" aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Disabled select<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--jc2n-item-choice-1" role="option">Disabled select</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--jc2n-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--jc2n-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--jc2n-item-choice-4" role="option">Option 3</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="5" data-value="4" id="choices--jc2n-item-choice-5" role="option">Option 4</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="6" data-value="5" id="choices--jc2n-item-choice-6" role="option">Option 5</div></div></div></div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-1" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#select-basic-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="select-basic-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Basic select example --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Basic select example"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Choose name...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Emily Johnson"</span>&gt;</span>Emily Johnson<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Michael Davis"</span>&gt;</span>Michael Davis<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Jessica Smith"</span>&gt;</span>Jessica Smith<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Christopher Taylor"</span>&gt;</span>Christopher Taylor<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Olivia Anderson"</span>&gt;</span>Olivia Anderson<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Ethan Williams"</span>&gt;</span>Ethan Williams<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Disabled select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Disabled select example"</span> <span class="hljs-attr">disabled</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Disabled select<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"4"</span>&gt;</span>Option 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"5"</span>&gt;</span>Option 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Search and option groups -->
+<section class="docs-section pb-sm-2 mb-5" id="select-search">
+<h4>Search and option groups</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded z-0" style="opacity: .4"></span>
+<div class="card-body position-relative">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-2" aria-selected="true" class="nav-link active" data-bs-target="#preview-2" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-2" aria-selected="false" class="nav-link" data-bs-target="#html-2" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-2" role="tabpanel">
+<div style="max-width: 400px">
+<div aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="combobox" tabindex="0"><div class="form-select"><select aria-label="Select with search example" class="form-select choices__input" data-choice="active" data-select='{
+                        "searchEnabled": true
+                      }' hidden="" tabindex="-1">
+<option selected="" value="">Select country...</option>
+<optgroup label="Africa">
+<option value="Nigeria">Nigeria</option>
+<option value="South Africa">South Africa</option>
+<option value="Kenya">Kenya</option>
+<option value="Egypt">Egypt</option>
+<option value="Ethiopia">Ethiopia</option>
+</optgroup>
+<optgroup label="Asia">
+<option value="China">China</option>
+<option value="India">India</option>
+<option value="Japan">Japan</option>
+<option value="South Korea">South Korea</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+</optgroup>
+<optgroup label="Europe">
+<option value="Germany">Germany</option>
+<option value="France">France</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="Italy">Italy</option>
+<option value="Spain">Spain</option>
+</optgroup>
+<optgroup label="North America">
+<option value="United States">United States</option>
+<option value="Canada">Canada</option>
+<option value="Mexico">Mexico</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Costa Rica">Costa Rica</option>
+</optgroup>
+<optgroup label="South America">
+<option value="Brazil">Brazil</option>
+<option value="Argentina">Argentina</option>
+<option value="Colombia">Colombia</option>
+<option value="Chile">Chile</option>
+<option value="Peru">Peru</option>
+</optgroup>
+<optgroup label="Oceania">
+<option value="Australia">Australia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Fiji">Fiji</option>
+<option value="Solomon Islands">Solomon Islands</option>
+</optgroup>
+</select><div class="choices__list choices__list--single" role="listbox"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select country...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><input aria-autocomplete="list" aria-label="Select country..." autocapitalize="off" autocomplete="off" class="choices__input choices__input--cloned" placeholder="Search..." role="textbox" spellcheck="false" type="search"/><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--y27p-item-choice-1" role="option">Select country...</div><div class="choices__group" data-group="" data-id="1" data-value="Africa" role="group"><div class="choices__heading">Africa</div></div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="1" data-id="2" data-value="Nigeria" id="choices--y27p-item-choice-2" role="treeitem">Nigeria</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="1" data-id="3" data-value="South Africa" id="choices--y27p-item-choice-3" role="treeitem">South Africa</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="1" data-id="4" data-value="Kenya" id="choices--y27p-item-choice-4" role="treeitem">Kenya</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="1" data-id="5" data-value="Egypt" id="choices--y27p-item-choice-5" role="treeitem">Egypt</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="1" data-id="6" data-value="Ethiopia" id="choices--y27p-item-choice-6" role="treeitem">Ethiopia</div><div class="choices__group" data-group="" data-id="2" data-value="Asia" role="group"><div class="choices__heading">Asia</div></div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="2" data-id="7" data-value="China" id="choices--y27p-item-choice-7" role="treeitem">China</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="2" data-id="8" data-value="India" id="choices--y27p-item-choice-8" role="treeitem">India</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="2" data-id="9" data-value="Japan" id="choices--y27p-item-choice-9" role="treeitem">Japan</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="2" data-id="10" data-value="South Korea" id="choices--y27p-item-choice-10" role="treeitem">South Korea</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="2" data-id="11" data-value="Saudi Arabia" id="choices--y27p-item-choice-11" role="treeitem">Saudi Arabia</div><div class="choices__group" data-group="" data-id="3" data-value="Europe" role="group"><div class="choices__heading">Europe</div></div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="3" data-id="12" data-value="Germany" id="choices--y27p-item-choice-12" role="treeitem">Germany</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="3" data-id="13" data-value="France" id="choices--y27p-item-choice-13" role="treeitem">France</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="3" data-id="14" data-value="United Kingdom" id="choices--y27p-item-choice-14" role="treeitem">United Kingdom</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="3" data-id="15" data-value="Italy" id="choices--y27p-item-choice-15" role="treeitem">Italy</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="3" data-id="16" data-value="Spain" id="choices--y27p-item-choice-16" role="treeitem">Spain</div><div class="choices__group" data-group="" data-id="4" data-value="North America" role="group"><div class="choices__heading">North America</div></div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="4" data-id="17" data-value="United States" id="choices--y27p-item-choice-17" role="treeitem">United States</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="4" data-id="18" data-value="Canada" id="choices--y27p-item-choice-18" role="treeitem">Canada</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="4" data-id="19" data-value="Mexico" id="choices--y27p-item-choice-19" role="treeitem">Mexico</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="4" data-id="20" data-value="Jamaica" id="choices--y27p-item-choice-20" role="treeitem">Jamaica</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="4" data-id="21" data-value="Costa Rica" id="choices--y27p-item-choice-21" role="treeitem">Costa Rica</div><div class="choices__group" data-group="" data-id="5" data-value="South America" role="group"><div class="choices__heading">South America</div></div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="5" data-id="22" data-value="Brazil" id="choices--y27p-item-choice-22" role="treeitem">Brazil</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="5" data-id="23" data-value="Argentina" id="choices--y27p-item-choice-23" role="treeitem">Argentina</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="5" data-id="24" data-value="Colombia" id="choices--y27p-item-choice-24" role="treeitem">Colombia</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="5" data-id="25" data-value="Chile" id="choices--y27p-item-choice-25" role="treeitem">Chile</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="5" data-id="26" data-value="Peru" id="choices--y27p-item-choice-26" role="treeitem">Peru</div><div class="choices__group" data-group="" data-id="6" data-value="Oceania" role="group"><div class="choices__heading">Oceania</div></div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="6" data-id="27" data-value="Australia" id="choices--y27p-item-choice-27" role="treeitem">Australia</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="6" data-id="28" data-value="New Zealand" id="choices--y27p-item-choice-28" role="treeitem">New Zealand</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="6" data-id="29" data-value="Papua New Guinea" id="choices--y27p-item-choice-29" role="treeitem">Papua New Guinea</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="6" data-id="30" data-value="Fiji" id="choices--y27p-item-choice-30" role="treeitem">Fiji</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-group-id="6" data-id="31" data-value="Solomon Islands" id="choices--y27p-item-choice-31" role="treeitem">Solomon Islands</div></div></div></div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-2" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#select-search-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="select-search-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Select with enabled search and option groups --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+  "searchEnabled": true
+}'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Select with search example"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select country...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Africa"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Nigeria"</span>&gt;</span>Nigeria<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"South Africa"</span>&gt;</span>South Africa<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Kenya"</span>&gt;</span>Kenya<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Egypt"</span>&gt;</span>Egypt<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Ethiopia"</span>&gt;</span>Ethiopia<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Asia"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"China"</span>&gt;</span>China<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"India"</span>&gt;</span>India<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Japan"</span>&gt;</span>Japan<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"South Korea"</span>&gt;</span>South Korea<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Saudi Arabia"</span>&gt;</span>Saudi Arabia<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Europe"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Germany"</span>&gt;</span>Germany<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"France"</span>&gt;</span>France<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"United Kingdom"</span>&gt;</span>United Kingdom<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Italy"</span>&gt;</span>Italy<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Spain"</span>&gt;</span>Spain<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"North America"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"United States"</span>&gt;</span>United States<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Canada"</span>&gt;</span>Canada<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Mexico"</span>&gt;</span>Mexico<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Jamaica"</span>&gt;</span>Jamaica<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Costa Rica"</span>&gt;</span>Costa Rica<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"South America"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Brazil"</span>&gt;</span>Brazil<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Argentina"</span>&gt;</span>Argentina<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Colombia"</span>&gt;</span>Colombia<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Chile"</span>&gt;</span>Chile<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Peru"</span>&gt;</span>Peru<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Oceania"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Australia"</span>&gt;</span>Australia<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"New Zealand"</span>&gt;</span>New Zealand<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Papua New Guinea"</span>&gt;</span>Papua New Guinea<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Fiji"</span>&gt;</span>Fiji<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Solomon Islands"</span>&gt;</span>Solomon Islands<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Multiple select -->
+<section class="docs-section pb-sm-2 mb-5" id="select-multiple">
+<h4>Multiple select</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded z-0" style="opacity: .4"></span>
+<div class="card-body position-relative">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-3" aria-selected="true" class="nav-link active" data-bs-target="#preview-3" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-3" aria-selected="false" class="nav-link" data-bs-target="#html-3" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-3" role="tabpanel">
+<div class="mb-4" style="max-width: 500px">
+<div aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-multiple" role="combobox"><div class="form-select"><select aria-label="Multiple select example" class="form-select choices__input" data-choice="active" data-select="" hidden="" multiple="" tabindex="-1">
+<option value="">Select CMS</option>
+<option selected="" value="Shopify">Shopify</option>
+<option value="WooCommerce">WooCommerce</option>
+<option value="Magento">Magento</option>
+<option value="OpenCart">OpenCart</option>
+<option value="PrestaShop">PrestaShop</option>
+<option value="VirtueMart">VirtueMart</option>
+</select><div class="choices__list choices__list--multiple" role="listbox"><div aria-selected="true" class="choices__item choices__item--selectable" data-deletable="" data-id="2" data-item="" data-value="Shopify" role="option">Shopify<button aria-label="Remove item: Shopify" class="choices__button" data-button="" type="button">Remove item</button></div></div><input aria-autocomplete="list" aria-label="Select CMS" autocapitalize="off" autocomplete="off" class="choices__input choices__input--cloned" placeholder="Select CMS" role="textbox" spellcheck="false" style="min-width: 11ch; width: 1ch;" type="search"/></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div aria-multiselectable="true" class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="3" data-value="WooCommerce" id="choices--aowx-item-choice-3" role="option">WooCommerce</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="Magento" id="choices--aowx-item-choice-4" role="option">Magento</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="5" data-value="OpenCart" id="choices--aowx-item-choice-5" role="option">OpenCart</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="6" data-value="PrestaShop" id="choices--aowx-item-choice-6" role="option">PrestaShop</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="7" data-value="VirtueMart" id="choices--aowx-item-choice-7" role="option">VirtueMart</div></div></div></div>
+</div>
+<div style="max-width: 500px">
+<div aria-autocomplete="list" aria-disabled="true" aria-expanded="false" aria-haspopup="true" class="choices is-disabled" data-type="select-multiple" role="combobox"><div class="form-select"><select aria-label="Disabled multiple select" class="form-select choices__input" data-choice="active" data-select="" disabled="" hidden="" multiple="" tabindex="-1">
+<option value="">Disabled select</option>
+<option selected="" value="Shopify">Shopify</option>
+<option value="WooCommerce">WooCommerce</option>
+<option value="Magento">Magento</option>
+<option value="OpenCart">OpenCart</option>
+<option value="PrestaShop">PrestaShop</option>
+<option value="VirtueMart">VirtueMart</option>
+</select><div class="choices__list choices__list--multiple" role="listbox"><div aria-disabled="true" aria-selected="true" class="choices__item choices__item--selectable" data-deletable="" data-id="2" data-item="" data-value="Shopify" role="option">Shopify<button aria-label="Remove item: Shopify" class="choices__button" data-button="" type="button">Remove item</button></div></div><input aria-autocomplete="list" aria-label="Disabled select" autocapitalize="off" autocomplete="off" class="choices__input choices__input--cloned" disabled="" placeholder="Disabled select" role="textbox" spellcheck="false" style="min-width: 16ch; width: 1ch;" type="search"/></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div aria-multiselectable="true" class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="3" data-value="WooCommerce" id="choices--tgh5-item-choice-3" role="option">WooCommerce</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="Magento" id="choices--tgh5-item-choice-4" role="option">Magento</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="5" data-value="OpenCart" id="choices--tgh5-item-choice-5" role="option">OpenCart</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="6" data-value="PrestaShop" id="choices--tgh5-item-choice-6" role="option">PrestaShop</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="7" data-value="VirtueMart" id="choices--tgh5-item-choice-7" role="option">VirtueMart</div></div></div></div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-3" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#select-multiple-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="select-multiple-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Multiple select example --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Multiple select example"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select CMS<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Shopify"</span> <span class="hljs-attr">selected</span>&gt;</span>Shopify<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"WooCommerce"</span>&gt;</span>WooCommerce<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Magento"</span>&gt;</span>Magento<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"OpenCart"</span>&gt;</span>OpenCart<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"PrestaShop"</span>&gt;</span>PrestaShop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"VirtueMart"</span>&gt;</span>VirtueMart<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Disabled select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Disabled multiple select"</span> <span class="hljs-attr">disabled</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Disabled select<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Shopify"</span> <span class="hljs-attr">selected</span>&gt;</span>Shopify<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"WooCommerce"</span>&gt;</span>WooCommerce<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Magento"</span>&gt;</span>Magento<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"OpenCart"</span>&gt;</span>OpenCart<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"PrestaShop"</span>&gt;</span>PrestaShop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"VirtueMart"</span>&gt;</span>VirtueMart<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tags input -->
+<section class="docs-section pb-sm-2 mb-5" id="select-tags-input">
+<h4>Tags input</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded z-0" style="opacity: .4"></span>
+<div class="card-body position-relative">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-4" aria-selected="true" class="nav-link active" data-bs-target="#preview-4" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-4" aria-selected="false" class="nav-link" data-bs-target="#html-4" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-4" role="tabpanel">
+<div class="mb-4" style="max-width: 500px">
+<div class="choices" data-type="text"><div class="form-select"><input class="form-select choices__input" data-choice="active" data-select='{"placeholderValue": "Enter something"}' hidden="" tabindex="-1" type="text" value="tag-1,tag-2"/><div class="choices__list choices__list--multiple"><div class="choices__item choices__item--selectable" data-deletable="" data-id="1" data-item="" data-value="tag-1">tag-1<button aria-label="Remove item: tag-1" class="choices__button" data-button="" type="button">Remove item</button></div><div class="choices__item choices__item--selectable" data-deletable="" data-id="2" data-item="" data-value="tag-2">tag-2<button aria-label="Remove item: tag-2" class="choices__button" data-button="" type="button">Remove item</button></div></div><input aria-autocomplete="list" aria-label="Enter something" autocapitalize="off" autocomplete="off" class="choices__input choices__input--cloned" placeholder="Enter something" role="textbox" spellcheck="false" style="min-width: 16ch; width: 1ch;" type="search"/></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div aria-multiselectable="true" class="choices__list" role="listbox"></div></div></div>
+</div>
+<div style="max-width: 500px">
+<div aria-disabled="true" class="choices is-disabled" data-type="text"><div class="form-select"><input class="form-select choices__input" data-choice="active" data-select='{"placeholderValue": "Disabled input"}' disabled="" hidden="" tabindex="-1" type="text" value="tag-1,tag-2"/><div class="choices__list choices__list--multiple"><div aria-disabled="true" class="choices__item choices__item--selectable" data-deletable="" data-id="1" data-item="" data-value="tag-1">tag-1<button aria-label="Remove item: tag-1" class="choices__button" data-button="" type="button">Remove item</button></div><div aria-disabled="true" class="choices__item choices__item--selectable" data-deletable="" data-id="2" data-item="" data-value="tag-2">tag-2<button aria-label="Remove item: tag-2" class="choices__button" data-button="" type="button">Remove item</button></div></div><input aria-autocomplete="list" aria-label="Disabled input" autocapitalize="off" autocomplete="off" class="choices__input choices__input--cloned" disabled="" placeholder="Disabled input" role="textbox" spellcheck="false" style="min-width: 15ch; width: 1ch;" type="search"/></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div aria-multiselectable="true" class="choices__list" role="listbox"></div></div></div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-4" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#select-tags-input-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="select-tags-input-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Tags input example --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{"placeholderValue": "Enter something"}'</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"tag-1,tag-2"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Disabled tags input --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{"placeholderValue": "Disabled input"}'</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"tag-1,tag-2"</span> <span class="hljs-attr">disabled</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Custom option template -->
+<section class="docs-section pb-sm-2 mb-5" id="select-custom-template">
+<h4>Custom option template</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded z-0" style="opacity: .4"></span>
+<div class="card-body position-relative">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-5" aria-selected="true" class="nav-link active" data-bs-target="#preview-5" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-5" aria-selected="false" class="nav-link" data-bs-target="#html-5" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-5" role="tabpanel">
+<div class="mb-3" style="max-width: 400px">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select"><select aria-label="Select language" class="form-select choices__input" data-choice="active" data-select='{
+                        "placeholderValue": "Select language",
+                        "choices": [
+                          {
+                            "value": "",
+                            "label": "Select language",
+                            "placeholder": true
+                          },
+                          {
+                            "value": "English",
+                            "label": "&lt;div class=\"d-flex align-items-center\"&gt;&lt;img src=\"../assets/img/flags/en-uk.png\" class=\"flex-shrink-0 me-2\" width=\"20\" alt=\"English\"&gt; English&lt;/div&gt;",
+                            "selected": true
+                          },
+                          {
+                            "value": "Français",
+                            "label": "&lt;div class=\"d-flex align-items-center\"&gt;&lt;img src=\"../assets/img/flags/fr.png\" class=\"flex-shrink-0 me-2\" width=\"20\" alt=\"Français\"&gt; Français&lt;/div&gt;"
+                          },
+                          {
+                            "value": "Deutsch",
+                            "label": "&lt;div class=\"d-flex align-items-center\"&gt;&lt;img src=\"../assets/img/flags/de.png\" class=\"flex-shrink-0 me-2\" width=\"20\" alt=\"Deutsch\"&gt; Deutsch&lt;/div&gt;"
+                          },
+                          {
+                            "value": "Italiano",
+                            "label": "&lt;div class=\"d-flex align-items-center\"&gt;&lt;img src=\"../assets/img/flags/it.png\" class=\"flex-shrink-0 me-2\" width=\"20\" alt=\"Italiano\"&gt; Italiano&lt;/div&gt;"
+                          }
+                        ]
+                      }' data-select-template="true" hidden="" tabindex="-1"><option value="">Select language</option><option selected="" value="English">&lt;div class="d-flex align-items-center"&gt;&lt;img src="../assets/img/flags/en-uk.png" class="flex-shrink-0 me-2" width="20" alt="English"&gt; English&lt;/div&gt;</option><option value="Français">&lt;div class="d-flex align-items-center"&gt;&lt;img src="../assets/img/flags/fr.png" class="flex-shrink-0 me-2" width="20" alt="Français"&gt; Français&lt;/div&gt;</option><option value="Deutsch">&lt;div class="d-flex align-items-center"&gt;&lt;img src="../assets/img/flags/de.png" class="flex-shrink-0 me-2" width="20" alt="Deutsch"&gt; Deutsch&lt;/div&gt;</option><option value="Italiano">&lt;div class="d-flex align-items-center"&gt;&lt;img src="../assets/img/flags/it.png" class="flex-shrink-0 me-2" width="20" alt="Italiano"&gt; Italiano&lt;/div&gt;</option></select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__item--selectable" data-id="2" data-item="" data-value="English">
+<div class="d-flex align-items-center"><img alt="English" class="flex-shrink-0 me-2" src="../assets/img/flags/en-uk.png" width="20"/> English</div>
+<button aria-label="Remove item" class="choices__button" data-button="" type="button"></button>
+</div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="2" data-select-text="" data-value="English" role="option">
+<div>
+<div class="d-flex align-items-center"><img alt="English" class="flex-shrink-0 me-2" src="../assets/img/flags/en-uk.png" width="20"/> English</div>
+</div>
+</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-select-text="" data-value="Français" role="option">
+<div>
+<div class="d-flex align-items-center"><img alt="Français" class="flex-shrink-0 me-2" src="../assets/img/flags/fr.png" width="20"/> Français</div>
+</div>
+</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-select-text="" data-value="Deutsch" role="option">
+<div>
+<div class="d-flex align-items-center"><img alt="Deutsch" class="flex-shrink-0 me-2" src="../assets/img/flags/de.png" width="20"/> Deutsch</div>
+</div>
+</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="5" data-select-text="" data-value="Italiano" role="option">
+<div>
+<div class="d-flex align-items-center"><img alt="Italiano" class="flex-shrink-0 me-2" src="../assets/img/flags/it.png" width="20"/> Italiano</div>
+</div>
+</div></div></div></div>
+</div>
+<div style="max-width: 400px">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select"><select aria-label="Choose rating" class="form-select choices__input" data-choice="active" data-select='{
+                        "placeholderValue": "Choose rating",
+                        "choices": [
+                          {
+                            "value": "",
+                            "label": "Choose rating",
+                            "placeholder": true
+                          },
+                          {
+                            "value": "1",
+                            "label": "&lt;span class=\"visually-hidden\"&gt;1 star&lt;/span&gt;",
+                            "customProperties": {
+                              "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+                              "selected": "1 star"
+                            }
+                          },
+                          {
+                            "value": "2",
+                            "label": "&lt;span class=\"visually-hidden\"&gt;2 stars&lt;/span&gt;",
+                            "customProperties": {
+                              "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+                              "selected": "2 stars"
+                            }
+                          },
+                          {
+                            "value": "3",
+                            "label": "&lt;span class=\"visually-hidden\"&gt;3 stars&lt;/span&gt;",
+                            "customProperties": {
+                              "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+                              "selected": "3 stars"
+                            }
+                          },
+                          {
+                            "value": "4",
+                            "label": "&lt;span class=\"visually-hidden\"&gt;4 stars&lt;/span&gt;",
+                            "customProperties": {
+                              "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+                              "selected": "4 stars"
+                            }
+                          },
+                          {
+                            "value": "5",
+                            "label": "&lt;span class=\"visually-hidden\"&gt;5 stars&lt;/span&gt;",
+                            "customProperties": {
+                              "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+                              "selected": "5 stars"
+                            }
+                          }
+                        ]
+                      }' data-select-template="true" hidden="" tabindex="-1"><option value="">Choose rating</option><option data-custom-properties='{"icon":"&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;","selected":"1 star"}' value="1">&lt;span class="visually-hidden"&gt;1 star&lt;/span&gt;</option><option data-custom-properties='{"icon":"&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;","selected":"2 stars"}' value="2">&lt;span class="visually-hidden"&gt;2 stars&lt;/span&gt;</option><option data-custom-properties='{"icon":"&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;","selected":"3 stars"}' value="3">&lt;span class="visually-hidden"&gt;3 stars&lt;/span&gt;</option><option data-custom-properties='{"icon":"&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;","selected":"4 stars"}' value="4">&lt;span class="visually-hidden"&gt;4 stars&lt;/span&gt;</option><option data-custom-properties='{"icon":"&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;","selected":"5 stars"}' value="5">&lt;span class="visually-hidden"&gt;5 stars&lt;/span&gt;</option></select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__item--selectable choices__placeholder" data-id="0" data-item="" data-placeholder="" data-value="">
+                    Choose rating
+                  <button aria-label="Remove item" class="choices__button" data-button="" type="button"></button>
+</div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="2" data-select-text="" data-value="1" role="option">
+<div>
+<span class="visually-hidden">1 star</span>
+<span class="d-flex gap-1 py-1"><i class="fi-star-filled text-warning"></i></span>
+</div>
+</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-select-text="" data-value="2" role="option">
+<div>
+<span class="visually-hidden">2 stars</span>
+<span class="d-flex gap-1 py-1"><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i></span>
+</div>
+</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-select-text="" data-value="3" role="option">
+<div>
+<span class="visually-hidden">3 stars</span>
+<span class="d-flex gap-1 py-1"><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i></span>
+</div>
+</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="5" data-select-text="" data-value="4" role="option">
+<div>
+<span class="visually-hidden">4 stars</span>
+<span class="d-flex gap-1 py-1"><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i></span>
+</div>
+</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="6" data-select-text="" data-value="5" role="option">
+<div>
+<span class="visually-hidden">5 stars</span>
+<span class="d-flex gap-1 py-1"><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i><i class="fi-star-filled text-warning"></i></span>
+</div>
+</div></div></div></div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-5" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#select-custom-template-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="select-custom-template-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Select with custom option template --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+  "placeholderValue": "Select language",
+  "choices": [
+    {
+      "value": "",
+      "label": "Select language",
+      "placeholder": true
+    },
+    {
+      "value": "English",
+      "label": "&lt;div class=\"d-flex align-items-center\"&gt;&lt;img src=\"assets/img/flags/en-uk.png\" class=\"flex-shrink-0 me-2\" width=\"20\" alt=\"English\"&gt; English&lt;/div&gt;",
+      "selected": true
+    },
+    {
+      "value": "Français",
+      "label": "&lt;div class=\"d-flex align-items-center\"&gt;&lt;img src=\"assets/img/flags/fr.png\" class=\"flex-shrink-0 me-2\" width=\"20\" alt=\"Français\"&gt; Français&lt;/div&gt;"
+    },
+    {
+      "value": "Deutsch",
+      "label": "&lt;div class=\"d-flex align-items-center\"&gt;&lt;img src=\"assets/img/flags/de.png\" class=\"flex-shrink-0 me-2\" width=\"20\" alt=\"Deutsch\"&gt; Deutsch&lt;/div&gt;"
+    },
+    {
+      "value": "Italiano",
+      "label": "&lt;div class=\"d-flex align-items-center\"&gt;&lt;img src=\"assets/img/flags/it.png\" class=\"flex-shrink-0 me-2\" width=\"20\" alt=\"Italiano\"&gt; Italiano&lt;/div&gt;"
+    }
+  ]
+}'</span> <span class="hljs-attr">data-select-template</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Select language"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Select with custom option template where selected label = customProperties.selected --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+  "placeholderValue": "Choose rating",
+  "choices": [
+    {
+      "value": "",
+      "label": "Choose rating",
+      "placeholder": true
+    },
+    {
+      "value": "1",
+      "label": "&lt;span class=\"visually-hidden\"&gt;1 star&lt;/span&gt;",
+      "customProperties": {
+        "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+        "selected": "1 star"
+      }
+    },
+    {
+      "value": "2",
+      "label": "&lt;span class=\"visually-hidden\"&gt;2 stars&lt;/span&gt;",
+      "customProperties": {
+        "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+        "selected": "2 stars"
+      }
+    },
+    {
+      "value": "3",
+      "label": "&lt;span class=\"visually-hidden\"&gt;3 stars&lt;/span&gt;",
+      "customProperties": {
+        "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+        "selected": "3 stars"
+      }
+    },
+    {
+      "value": "4",
+      "label": "&lt;span class=\"visually-hidden\"&gt;4 stars&lt;/span&gt;",
+      "customProperties": {
+        "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+        "selected": "4 stars"
+      }
+    },
+    {
+      "value": "5",
+      "label": "&lt;span class=\"visually-hidden\"&gt;5 stars&lt;/span&gt;",
+      "customProperties": {
+        "icon": "&lt;span class=\"d-flex gap-1 py-1\"&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;i class=\"fi-star-filled text-warning\"&gt;&lt;/i&gt;&lt;/span&gt;",
+        "selected": "5 stars"
+      }
+    }
+  ]
+}'</span> <span class="hljs-attr">data-select-template</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Choose rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sizes and shapes -->
+<section class="docs-section" id="select-sizes-shapes">
+<h4>Sizes and shapes</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded z-0" style="opacity: .4"></span>
+<div class="card-body position-relative">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-6" aria-selected="true" class="nav-link active" data-bs-target="#preview-6" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-6" aria-selected="false" class="nav-link" data-bs-target="#html-6" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-6" role="tabpanel">
+<div class="d-flex flex-wrap flex-sm-nowrap gap-4">
+<div class="w-100" style="max-width: 400px">
+<div class="mb-3">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select form-select-lg"><select aria-label="Large rounded select" class="form-select form-select-lg choices__input" data-choice="active" data-select='{
+                            "classNames": {
+                              "containerInner": ["form-select", "form-select-lg"]
+                            }
+                          }' hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--losi-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--losi-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--losi-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--losi-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+<div class="mb-3">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select"><select aria-label="Normal rounded select" class="form-select choices__input" data-choice="active" data-select="" hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--z3rx-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--z3rx-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--z3rx-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--z3rx-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select form-select-sm"><select aria-label="Small rounded select" class="form-select form-select-sm choices__input" data-choice="active" data-select='{
+                          "classNames": {
+                            "containerInner": ["form-select", "form-select-sm"]
+                          }
+                        }' hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--jloq-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--jloq-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--jloq-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--jloq-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+<div class="w-100" style="max-width: 400px">
+<div class="mb-3">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select form-select-lg rounded-pill"><select aria-label="Large pill select" class="form-select form-select-lg rounded-pill choices__input" data-choice="active" data-select='{
+                            "classNames": {
+                              "containerInner": ["form-select", "form-select-lg", "rounded-pill"]
+                            }
+                          }' hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--0uif-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--0uif-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--0uif-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--0uif-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+<div class="mb-3">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select rounded-pill"><select aria-label="Normal pill select" class="form-select rounded-pill choices__input" data-choice="active" data-select='{
+                            "classNames": {
+                              "containerInner": ["form-select", "rounded-pill"]
+                            }
+                          }' hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--hznh-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--hznh-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--hznh-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--hznh-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select form-select-sm rounded-pill"><select aria-label="Small pill select" class="form-select form-select-sm rounded-pill choices__input" data-choice="active" data-select='{
+                          "classNames": {
+                            "containerInner": ["form-select", "form-select-sm", "rounded-pill"]
+                          }
+                        }' hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--il2x-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--il2x-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--il2x-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--il2x-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+</div>
+<div class="w-100 pt-4 mt-sm-2" style="max-width: 400px">
+<div class="mb-3">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select form-select-lg rounded-0"><select aria-label="Large square select" class="form-select form-select-lg rounded-0 choices__input" data-choice="active" data-select='{
+                          "classNames": {
+                            "containerInner": ["form-select", "form-select-lg", "rounded-0"]
+                          }
+                        }' hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--nf6u-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--nf6u-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--nf6u-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--nf6u-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+<div class="mb-3">
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select rounded-0"><select aria-label="Normal square select" class="form-select rounded-0 choices__input" data-choice="active" data-select='{
+                          "classNames": {
+                            "containerInner": ["form-select", "rounded-0"]
+                          }
+                        }' hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--jal0-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--jal0-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--jal0-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--jal0-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+<div aria-expanded="false" aria-haspopup="true" class="choices" data-type="select-one" role="listbox" tabindex="0"><div class="form-select form-select-sm rounded-0"><select aria-label="Small square select" class="form-select form-select-sm rounded-0 choices__input" data-choice="active" data-select='{
+                        "classNames": {
+                          "containerInner": ["form-select", "form-select-sm", "rounded-0"]
+                        }
+                      }' hidden="" tabindex="-1">
+<option selected="" value="">Select option...</option>
+<option value="1">Option 1</option>
+<option value="2">Option 2</option>
+<option value="3">Option 3</option>
+</select><div class="choices__list choices__list--single"><div aria-selected="true" class="choices__item choices__placeholder choices__item--selectable" data-deletable="" data-id="1" data-item="" data-placeholder="" data-value="" role="option">Select option...<button aria-label="Remove item: " class="choices__button" data-button="" type="button">Remove item</button></div></div></div><div aria-expanded="false" class="choices__list choices__list--dropdown"><div class="choices__list" role="listbox"><div aria-selected="true" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" data-choice="" data-choice-selectable="" data-id="1" data-value="" id="choices--drbp-item-choice-1" role="option">Select option...</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="2" data-value="1" id="choices--drbp-item-choice-2" role="option">Option 1</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="3" data-value="2" id="choices--drbp-item-choice-3" role="option">Option 2</div><div class="choices__item choices__item--choice choices__item--selectable" data-choice="" data-choice-selectable="" data-id="4" data-value="3" id="choices--drbp-item-choice-4" role="option">Option 3</div></div></div></div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-6" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#select-sizes-shapes-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="select-sizes-shapes-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Large rounded select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select form-select-lg"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+    "classNames": {
+      "containerInner": ["form-select", "form-select-lg"]
+    }
+  }'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Large rounded select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Normal rounded select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select"</span> <span class="hljs-attr">data-select</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Normal rounded select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Small rounded select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select form-select-sm"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+    "classNames": {
+      "containerInner": ["form-select", "form-select-sm"]
+    }
+  }'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Small rounded select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Large pill select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select form-select-lg rounded-pill"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+    "classNames": {
+      "containerInner": ["form-select", "form-select-lg", "rounded-pill"]
+    }
+  }'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Large pill select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Normal pill select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select rounded-pill"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+    "classNames": {
+      "containerInner": ["form-select", "rounded-pill"]
+    }
+  }'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Normal pill select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Small pill select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select form-select-sm rounded-pill"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+    "classNames": {
+      "containerInner": ["form-select", "form-select-sm", "rounded-pill"]
+    }
+  }'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Small pill select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Large square select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select form-select-lg rounded-0"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+    "classNames": {
+      "containerInner": ["form-select", "form-select-lg", "rounded-0"]
+    }
+  }'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Large square select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Normal square select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select rounded-0"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+    "classNames": {
+      "containerInner": ["form-select", "rounded-0"]
+    }
+  }'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Normal square select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Small square select --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-select form-select-sm rounded-0"</span> <span class="hljs-attr">data-select</span>=<span class="hljs-string">'{
+    "classNames": {
+      "containerInner": ["form-select", "form-select-sm", "rounded-0"]
+    }
+  }'</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Small square select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>Select option...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+<!-- Back to top button -->
+<div class="floating-buttons position-fixed top-50 end-0 z-sticky me-3 me-xl-4 pb-4">
+<a class="btn-scroll-top btn btn-sm bg-body border-0 rounded-pill shadow animate-slide-end" href="#top">
+        Top
+        <i class="fi-arrow-right fs-base ms-1 me-n1 animate-target"></i>
+<span class="position-absolute top-0 start-0 w-100 h-100 border rounded-pill z-0"></span>
+<svg class="position-absolute top-0 start-0 w-100 h-100 z-1" fill="none" viewbox="0 0 62 32" xmlns="http://www.w3.org/2000/svg">
+<rect height="30.5" rx="15.25" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5" style="stroke-dasharray: 155.201; stroke-dashoffset: 155.201;" width="60.5" x=".75" y=".75"></rect>
+</svg>
+</a>
+<a aria-controls="customizer" class="btn btn-sm btn-outline-secondary text-uppercase bg-body rounded-pill shadow animate-rotate ms-2 me-n5" data-bs-toggle="offcanvas" href="#customizer" role="button" style="font-size: .625rem; letter-spacing: .05rem;">
+        Customize<i class="fi-settings fs-base ms-1 me-n2 animate-target"></i>
+</a>
+</div>
+<!-- Vendor scripts -->
+<script src="../ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/vendor/simplebar/simplebar.min.js"></script>
+<script src="../assets/vendor/list.js/list.min.js"></script>
+<script src="../assets/vendor/choices.js/choices.min.js"></script>
+<!-- Bootstrap + Theme scripts -->
+<script src="../assets/js/theme.min.js"></script>
+<!-- Docs specific scripts -->
+<script>
+      const sidebar = new bootstrap.Offcanvas('#sidebarNav')
+      const closeSidebar = () => {
+        setTimeout(() => {
+          sidebar.hide()
+        }, 500)
+      }
+      (() => {
+        const scrollable = document.getElementById('scrollable')
+        const simplebar = new SimpleBar(scrollable)
+        const anchor = scrollable.querySelector('.list-group-item.active')
+        if (anchor === null) return
+        simplebar.getScrollElement().scrollTo({
+          top: anchor.parentNode.offsetTop,
+          behavior: 'instant'
+        })
+      })()
+    </script>
+</body></html>

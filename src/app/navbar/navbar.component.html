@@ -1,0 +1,132 @@
+<!-- Navigation bar (Page header) -->
+<header class="navbar navbar-expand-lg bg-body navbar-sticky sticky-top z-fixed px-0" data-sticky-element="">
+    <div class="container">
+        <!-- Menu mobile (Hamburger) -->
+        <button aria-controls="navbarNav" aria-label="Toggle navigation" class="navbar-toggler me-3 me-lg-0"
+            data-bs-target="#navbarNav" data-bs-toggle="offcanvas" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Logo -->
+        <a class="navbar-brand py-1 py-md-2 py-xl-1 me-2 me-sm-n4 me-md-n5 me-lg-0" routerLink="/">
+            <span class="d-flex align-items-center">
+                <i class="fi-home text-primary fs-3 me-2"></i>
+                <span class="fs-4">ImmoAuto Togo</span>
+            </span>
+        </a>
+
+        <!-- Menu principal -->
+        <nav aria-labelledby="navbarNavLabel" class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1">
+            <div class="offcanvas-header py-3">
+                <h5 class="offcanvas-title" id="navbarNavLabel">ImmoAuto Togo</h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+            </div>
+            <div class="offcanvas-body pt-2 pb-4 py-lg-0 mx-lg-auto">
+                <ul class="navbar-nav position-relative">
+                    <!-- Accueil -->
+                    <li class="nav-item py-lg-2 me-lg-n1 me-xl-0">
+                        <a class="nav-link" routerLink="/" routerLinkActive="active">Accueil</a>
+                    </li>
+
+                    <!-- Immobilier -->
+                    <li class="nav-item dropdown py-lg-2 me-lg-n1 me-xl-0">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">
+                            Immobilier
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/immobilier/maisons">Maisons</a></li>
+                            <li><a class="dropdown-item" routerLink="/immobilier/appartements">Appartements</a></li>
+                            <li><a class="dropdown-item" routerLink="/immobilier/terrains">Terrains</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/immobilier/ajouter">Publier une annonce</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Véhicules -->
+                    <li class="nav-item dropdown py-lg-2 me-lg-n1 me-xl-0">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">
+                            Véhicules
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/vehicules/voitures">Voitures</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/vehicules/ajouter">Vendre un véhicule</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- À propos -->
+                    <li class="nav-item py-lg-2 me-lg-n1 me-xl-0">
+                        <a class="nav-link" routerLink="/a-propos">À propos</a>
+                    </li>
+
+                    <!-- Contact -->
+                    <li class="nav-item py-lg-2 me-lg-n1 me-xl-0">
+                        <a class="nav-link" routerLink="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Actions -->
+        <div class="d-flex gap-sm-1">
+            <!-- Theme switcher (light/dark/auto) -->
+            <div class="dropdown">
+                <button aria-expanded="false" aria-label="Toggle theme (light)"
+                    class="theme-switcher btn btn-icon btn-outline-secondary fs-lg border-0 animate-scale"
+                    data-bs-display="dynamic" data-bs-toggle="dropdown" type="button">
+                    <span class="theme-icon-active d-flex animate-target">
+                        <i class="fi-sun"></i>
+                    </span>
+                </button>
+                <ul class="dropdown-menu start-50 translate-middle-x"
+                    style="--fn-dropdown-min-width: 9rem; --fn-dropdown-spacer: .5rem">
+                    <li>
+                        <button aria-pressed="true" class="dropdown-item active" data-bs-theme-value="light"
+                            type="button">
+                            <span class="theme-icon d-flex fs-base me-2">
+                                <i class="fi-sun"></i>
+                            </span>
+                            <span class="theme-label">Light</span>
+                            <i class="item-active-indicator fi-check ms-auto"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button aria-pressed="false" class="dropdown-item" data-bs-theme-value="dark" type="button">
+                            <span class="theme-icon d-flex fs-base me-2">
+                                <i class="fi-moon"></i>
+                            </span>
+                            <span class="theme-label">Dark</span>
+                            <i class="item-active-indicator fi-check ms-auto"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button aria-pressed="false" class="dropdown-item" data-bs-theme-value="auto" type="button">
+                            <span class="theme-icon d-flex fs-base me-2">
+                                <i class="fi-auto"></i>
+                            </span>
+                            <span class="theme-label">Auto</span>
+                            <i class="item-active-indicator fi-check ms-auto"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Compte utilisateur -->
+            <a class="btn btn-icon btn-outline-secondary fs-lg border-0 animate-shake me-2"
+                routerLink="/compte/connexion" title="Mon compte">
+                <i class="fi-user"></i>
+            </a>
+
+            <!-- Publier une annonce -->
+            <a class="btn btn-primary animate-scale" routerLink="/publier">
+                <i class="fi-plus me-2"></i>
+                Publier une annonce
+            </a>
+        </div>
+    </div>
+</header>

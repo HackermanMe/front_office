@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" data-pwa="true" dir="ltr" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Finder Docs | List group</title>
+<!-- Theme switcher (color modes) -->
+<script src="../assets/js/theme-switcher.js"></script>
+<!-- Webmanifest + Favicon / App icons -->
+<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../manifest.json" rel="manifest"/>
+<link href="../assets/app-icons/icon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/app-icons/icon-180x180.png" rel="apple-touch-icon"/>
+<!-- Preloaded local web font (Inter) -->
+<link as="font" crossorigin="" href="../assets/fonts/inter-variable-latin.woff2" rel="preload" type="font/woff2"/>
+<!-- Font icons -->
+<link as="font" crossorigin="" href="../assets/icons/finder-icons.woff2" rel="preload" type="font/woff2"/>
+<link href="../assets/icons/finder-icons.min.css" rel="stylesheet"/>
+<!-- Vendor styles -->
+<link href="../ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<link href="../assets/vendor/simplebar/simplebar.min.css" rel="stylesheet"/>
+<!-- Bootstrap + Theme styles -->
+<link as="style" href="../assets/css/theme.min.css" rel="preload"/>
+<link as="style" href="../assets/css/theme.rtl.min.css" rel="preload"/>
+<link href="../assets/css/theme.min.css" id="theme-styles" rel="stylesheet"/>
+<!-- Customizer -->
+<script src="../assets/js/customizer.min.js"></script><style id="customizer-styles">:root,[data-bs-theme="light"]{}[data-bs-theme="dark"]{}.btn-primary{}.btn-success{}.btn-warning{}.btn-danger{}.btn-info{}.btn-outline-primary{}.btn-outline-success{}.btn-outline-warning{}.btn-outline-danger{}.btn-outline-info{}</style>
+<!-- Docs specific styles -->
+<style>
+      .docs-section {
+        scroll-margin-top: 100px;
+      }
+      @media (min-width: 992px) {
+        .docs-sidebar {
+          position: sticky;
+          top: 7rem;
+          height: calc(100vh - 8.5rem);
+        }
+        .docs-section {
+          scroll-margin-top: 118px;
+        }
+      }
+    </style>
+</head>
+<!-- Body -->
+<body data-bs-spy="scroll" data-bs-target="#anchorNav">
+<!-- Customizer offcanvas -->
+<div class="offcanvas offcanvas-end" id="customizer" tabindex="-1">
+<div class="offcanvas-header border-bottom">
+<h4 class="h5 offcanvas-title">Customize theme</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<!-- Customizer settings -->
+<div class="customizer-collapse collapse show" id="customizerSettings">
+<!-- Colors -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center mb-3">
+<i class="fi-swatches text-body-tertiary fs-5 me-2"></i>
+<h5 class="fs-lg mb-0">Colors</h5>
+</div>
+<div class="row row-cols-2 g-3" id="theme-colors">
+<div class="col">
+<h6 class="fs-sm mb-2">Primary</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-primary", "primary", "primary-rgb"]' id="theme-primary">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#d85151"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="primary" style="max-width: 38px; background-color: #d85151"></label>
+<input class="visually-hidden" id="primary" type="color" value="#d85151"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Success</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-success", "success", "success-rgb"]' id="theme-success">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#33b36b"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="success" style="max-width: 38px; background-color: #33b36b"></label>
+<input class="visually-hidden" id="success" type="color" value="#33b36b"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Warning</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-warning", "warning", "warning-rgb"]' id="theme-warning">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#fc9231"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="warning" style="max-width: 38px; background-color: #fc9231"></label>
+<input class="visually-hidden" id="warning" type="color" value="#fc9231"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Danger</h6>
+<div class="color-swatch d-flex border rounded gap-2 p-2" data-color-labels='["theme-danger", "danger", "danger-rgb"]' id="theme-danger">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#f03d3d"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="danger" style="max-width: 38px; background-color: #f03d3d"></label>
+<input class="visually-hidden" id="danger" type="color" value="#f03d3d"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Info</h6>
+<div class="color-swatch d-flex border rounded gap-2 p-2" data-color-labels='["theme-info", "info", "info-rgb"]' id="theme-info">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#3d7a81"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="info" style="max-width: 38px; background-color: #3d7a81"></label>
+<input class="visually-hidden" id="info" type="color" value="#3d7a81"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Direction -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-sort text-body-tertiary fs-lg me-2" style="transform: rotate(90deg)"></i>
+<h5 class="fs-lg mb-0">Direction</h5>
+</div>
+<div class="d-flex align-items-center justify-content-between border rounded p-3">
+<div class="me-3">
+<h6 class="mb-1">RTL</h6>
+<p class="fs-sm mb-0">Change text direction</p>
+</div>
+<div class="form-check form-switch m-0">
+<input class="form-check-input" id="rtl-switch" role="switch" type="checkbox"/>
+</div>
+</div>
+<div class="alert alert-info p-2 mt-2 mb-0">
+<div class="d-flex text-body-emphasis fs-xs py-1 pe-1">
+<i class="fi-info text-info fs-lg mb-2 mb-sm-0" style="margin-top: .125rem"></i>
+<div class="ps-2">To switch the text direction of your webpage from LTR to RTL, please consult the detailed instructions provided in the relevant section of our documentation.</div>
+</div>
+</div>
+</div>
+<!-- Border width -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-menu text-body-tertiary fs-lg me-2"></i>
+<h5 class="fs-lg mb-0">Border width, px</h5>
+</div>
+<div class="slider-input d-flex align-items-center gap-3 border rounded p-3" id="border-input">
+<input class="form-range" max="10" min="0" step="1" type="range" value="1"/>
+<input class="form-control" id="border-width" max="10" min="0" style="max-width: 5.5rem" type="number" value="1"/>
+</div>
+</div>
+<!-- Rounding -->
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-maximize text-body-tertiary fs-lg me-2"></i>
+<h5 class="fs-lg mb-0">Rounding, rem</h5>
+</div>
+<div class="slider-input d-flex align-items-center gap-3 border rounded p-3">
+<input class="form-range" max="5" min="0" step=".05" type="range" value="0.5"/>
+<input class="form-control" id="border-radius" max="5" min="0" step=".05" style="max-width: 5.5rem" type="number" value="0.5"/>
+</div>
+</div>
+<!-- Customizer code -->
+<div class="customizer-collapse collapse" id="customizerCode">
+<div class="nav mb-3">
+<a aria-controls="customizerSettings customizerCode" aria-expanded="true" class="nav-link position-relative fs-base p-0" data-bs-toggle="collapse" href=".customizer-collapse">
+<i class="fi-chevron-left fs-lg ms-n1 me-1"></i>
+<span class="hover-effect-underline stretched-link">Back to settings</span>
+</a>
+</div>
+<p class="fs-sm pb-1">To apply the provided styles to your webpage, enclose them within a <code>&lt;style&gt;</code> tag and insert this tag into the <code>&lt;head&gt;</code> section of your HTML document after the following link to the main stylesheet:<br/><code>&lt;link href="assets/css/theme.min.css"&gt;</code></p>
+<div class="position-relative bg-body-tertiary rounded overflow-hidden pt-3">
+<div class="position-absolute top-0 start-0 w-100 p-3">
+<button class="btn btn-sm btn-outline-dark w-100" data-copy-text-from="#generated-styles" data-done-label="Code copied" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                Copy code
+              </button>
+</div>
+<pre class="text-wrap bg-transparent border-0 fs-xs text-body-emphasis p-4 pt-5" id="generated-styles"></pre>
+</div>
+</div>
+</div>
+<!-- Offcanvas footer (Action buttons) -->
+<div class="offcanvas-header border-top gap-3 d-none" id="customizer-btns">
+<button class="btn btn-lg btn-secondary w-100 fs-sm" id="customizer-reset" type="button">
+<i class="fi-trash fs-lg me-2 ms-n1"></i>
+          Reset
+        </button>
+<button aria-controls="customizerSettings customizerCode" aria-expanded="false" class="btn btn-lg btn-primary hiding-collapse-toggle w-100 fs-sm collapsed" data-bs-target=".customizer-collapse" data-bs-toggle="collapse" type="button">
+<i class="fi-code fs-lg me-2 ms-n1"></i>
+          Show code
+        </button>
+</div>
+</div>
+<!-- Navigation bar (Header) -->
+<header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top z-fixed px-0" data-bs-theme="dark">
+<div class="container py-1 py-lg-2">
+<button aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle sidebar navigation" class="navbar-toggler me-3" data-bs-target="#sidebarNav" data-bs-toggle="offcanvas" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<a class="navbar-brand mx-auto mx-lg-0" href="../index.html">
+<span class="d-flex flex-shrink-0 text-primary rtl-flip me-2">
+<svg height="34" width="35" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 16.894v10.731c0 3.506-2.869 6.375-6.375 6.375H17.5h-.85C7.725 33.575.5 26.138.5 17c0-9.35 7.65-17 17-17s17 7.544 17 16.894z" fill="currentColor"></path><g fill-rule="evenodd"><path d="M17.5 13.258c-3.101 0-5.655 2.554-5.655 5.655s2.554 5.655 5.655 5.655 5.655-2.554 5.655-5.655-2.554-5.655-5.655-5.655zm-9.433 5.655c0-5.187 4.246-9.433 9.433-9.433s9.433 4.246 9.433 9.433a9.36 9.36 0 0 1-1.569 5.192l2.397 2.397a1.89 1.89 0 0 1 0 2.671 1.89 1.89 0 0 1-2.671 0l-2.397-2.397a9.36 9.36 0 0 1-5.192 1.569c-5.187 0-9.433-4.246-9.433-9.433z" fill="#000" fill-opacity=".05"></path><g fill="#fff"><path d="M17.394 10.153c-3.723 0-6.741 3.018-6.741 6.741s3.018 6.741 6.741 6.741 6.741-3.018 6.741-6.741-3.018-6.741-6.741-6.741zM7.347 16.894A10.05 10.05 0 0 1 17.394 6.847 10.05 10.05 0 0 1 27.44 16.894 10.05 10.05 0 0 1 17.394 26.94 10.05 10.05 0 0 1 7.347 16.894z"></path><path d="M23.025 22.525c.645-.645 1.692-.645 2.337 0l3.188 3.188c.645.645.645 1.692 0 2.337s-1.692.645-2.337 0l-3.187-3.187c-.645-.646-.645-1.692 0-2.337z"></path></g></g><path d="M23.662 14.663c2.112 0 3.825-1.713 3.825-3.825s-1.713-3.825-3.825-3.825-3.825 1.713-3.825 3.825 1.713 3.825 3.825 3.825z" fill="#fff"></path><path d="M23.663 8.429a2.41 2.41 0 0 0-2.408 2.408 2.41 2.41 0 0 0 2.408 2.408 2.41 2.41 0 0 0 2.408-2.408 2.41 2.41 0 0 0-2.408-2.408zm-5.242 2.408c0-2.895 2.347-5.242 5.242-5.242s5.242 2.347 5.242 5.242-2.347 5.242-5.242 5.242-5.242-2.347-5.242-5.242z" fill="currentColor" fill-rule="evenodd"></path></svg>
+</span>
+          Finder
+          <span class="badge text-primary bg-primary bg-opacity-10 fs-xs rounded-pill d-none d-lg-inline-block ms-2">v2.0.0</span>
+</a>
+<div aria-labelledby="navbarNavLabel" class="offcanvas-lg offcanvas-end ms-auto" id="navbarNav" tabindex="-1">
+<div class="offcanvas-header py-3">
+<h5 class="offcanvas-title" id="navbarNavLabel">Finder</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarNav" type="button"></button>
+</div>
+<div class="offcanvas-body pt-0">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="installation.html">Docs</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" href="typography.html">Components</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../index.html">Live demo</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://createx.studio/contact" rel="noreferrer" target="_blank">Support</a>
+</li>
+</ul>
+</div>
+<div class="offcanvas-header border-top">
+<a class="btn btn-primary w-100" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" rel="noreferrer" target="_blank">
+<i class="fi-shopping-bag fs-base ms-n1 me-2"></i>
+              Buy now
+            </a>
+</div>
+</div>
+<div class="dropdown pe-lg-1 ms-lg-3">
+<button aria-expanded="false" aria-label="Toggle theme (light)" class="theme-switcher btn btn-icon btn-secondary fs-base rounded-circle animate-scale" data-bs-toggle="dropdown" type="button">
+<span class="theme-icon-active d-flex animate-target">
+<i class="fi-sun"></i>
+</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end" style="--fn-dropdown-spacer: .625rem; --fn-dropdown-min-width: 9rem">
+<li>
+<button aria-pressed="true" class="dropdown-item active" data-bs-theme-value="light" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-sun"></i>
+</span>
+<span class="theme-label">Light</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+<li>
+<button aria-pressed="false" class="dropdown-item" data-bs-theme-value="dark" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-moon"></i>
+</span>
+<span class="theme-label">Dark</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+<li>
+<button aria-pressed="false" class="dropdown-item" data-bs-theme-value="auto" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-auto"></i>
+</span>
+<span class="theme-label">Auto</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+</ul>
+</div>
+<button aria-controls="navbarNav" aria-label="Toggle navbar navigation" class="btn btn-icon btn-outline-secondary border-0 d-lg-none ms-2 me-n2" data-bs-target="#navbarNav" data-bs-toggle="offcanvas" type="button">
+<i class="fi-more-horizontal fs-3"></i>
+</button>
+<a class="btn btn-primary animate-shake d-none d-lg-inline-flex ms-4" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" rel="noreferrer" target="_blank">
+<i class="fi-shopping-bag fs-base animate-target ms-n1 me-2"></i>
+          Buy now
+        </a>
+</div>
+</header>
+<!-- Page container -->
+<div class="container pt-4">
+<div class="row pt-sm-2">
+<!-- Sidebar navigation -->
+<aside class="col-lg-3 pe-xl-4">
+<div class="docs-sidebar" data-filter-list='{"searchClass": "docs-search", "listClass": "docs-list", "valueNames": ["list-group-item"]}'>
+<div aria-labelledby="sidebarNavLabel" class="offcanvas-lg offcanvas-start d-flex flex-column h-100" id="sidebarNav" tabindex="-1">
+<div class="offcanvas-header py-3">
+<h5 class="offcanvas-title" id="sidebarNavLabel">Browse docs</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarNav" type="button"></button>
+</div>
+<div class="position-relative mx-4 ms-lg-0 mb-4">
+<i class="fi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+<input class="docs-search form-control form-icon-start" placeholder="Quick search..." type="search"/>
+<button class="btn btn-sm btn-outline-secondary w-auto border-0 p-1 position-absolute top-50 end-0 translate-middle-y me-2 opacity-0">
+<svg class="opacity-75" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+<path d="M18.619 5.381a.875.875 0 0 1 0 1.238l-12 12A.875.875 0 0 1 5.38 17.38l12-12a.875.875 0 0 1 1.238 0Z"></path><path d="M5.381 5.381a.875.875 0 0 1 1.238 0l12 12a.875.875 0 1 1-1.238 1.238l-12-12a.875.875 0 0 1 0-1.238Z"></path>
+</svg>
+</button></div>
+<div class="offcanvas-body d-block flex-grow-1 overflow-hidden pt-0 pe-0 pb-lg-2">
+<div class="h-100 overflow-y-auto pe-4 simplebar-scrollable-y" data-simplebar="init" id="scrollable"><div class="simplebar-wrapper" style="margin: 0px -24px 0px 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div aria-label="scrollable content" class="simplebar-content-wrapper" role="region" style="height: 100%; overflow: hidden scroll;" tabindex="0"><div class="simplebar-content" style="padding: 0px 24px 0px 0px;">
+<nav class="docs-list list-group list-group-borderless" onclick="closeSidebar()"><h3 class="h6 d-flex align-items-center pb-1 mb-2">
+<i class="fi-book fs-lg text-success me-2"></i>
+                      Getting started
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="installation.html">
+                        Installation
+                        <span class="visually-hidden">setup npm prerequisites</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle text-wrap pe-3" href="npm-scripts.html">
+                        Npm commands (Scripts)
+                        <span class="visually-hidden">dev build styles:compile styles:minify scripts:compile scripts:minify icon-font vendor validate watch dist</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="structure.html">
+                        File structure
+                        <span class="visually-hidden">project folders</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="configuration.html">
+                        Configuration files
+                        <span class="visually-hidden">package.json config.js babelrc browserslistrc editorconfig eslintrc gitignore htmlvalidate prettierignore prettierrc stylelintrc webmanifest manifest.json</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle text-wrap pe-3" href="pwa.html">
+                        Progressive Web App (PWA)
+                        <span class="visually-hidden">service worker manifest</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="web-font.html">
+                        Web font(s)
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="icon-font.html">
+                        Icon font
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="performance.html">
+                        Performance: CLS &amp; Preload
+                        <span class="visually-hidden">cumulative layout shift loading aspect-ratio</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="browser-support.html">
+                        Browser support
+                        <span class="visually-hidden">autoprefixer</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="rtl.html">Right-to-Left (RTL)</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="deployment.html">
+                        Deployment guide
+                        <span class="visually-hidden">launch hosting publishing rollout go-live</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="credits.html">
+                        Sources and credits
+                        <span class="visually-hidden">resources plugins libraries frameworks assets</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="changelog.html">
+                        Changelog
+                        <span class="visually-hidden">updates</span>
+</a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-settings fs-lg text-primary me-2"></i>
+                      Customize
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="options.html">
+                        Global options
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="colors.html">
+                        Colors
+                        <span class="visually-hidden">grayscale primary secondary info warning success danger dark light</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3 text-wrap" href="color-modes.html">
+                        Color modes (Light/Dark)
+                        <span class="visually-hidden">themes</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="css-variables.html">
+                        CSS variables
+                      </a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-file-text fs-lg text-secondary me-2"></i>
+                      Content
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="typography.html">
+                        Typography
+                        <span class="visually-hidden">text font heading title paragraph list ordered unordered description blockquote quotation abbreviation</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="icons.html">Icons</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="code.html">
+                        Code
+                        <span class="visually-hidden">pre kbd highlight</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="images.html">
+                        Images &amp; figures
+                        <span class="visually-hidden">thumbnails picture</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tables.html">
+                        Tables
+                      </a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-layers fs-lg text-info me-2"></i>
+                      Components
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="accordion.html">
+                        Accordion
+                        <span class="visually-hidden">collapse</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="alerts.html">
+                        Alerts
+                        <span class="visually-hidden">notification callout</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="badges.html">
+                        Badges
+                        <span class="visually-hidden">count indicator</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="blog-components.html">
+                        Blog components
+                        <span class="visually-hidden">post article</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="breadcrumb.html">
+                        Breadcrumb
+                        <span class="visually-hidden">navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="buttons.html">
+                        Buttons
+                        <span class="visually-hidden">navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="button-group.html">
+                        Button group
+                        <span class="visually-hidden">navigation link</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="card.html">
+                        Card
+                        <span class="visually-hidden">box container</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="carousel.html">
+                        Carousel (Slider)
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="categories.html">
+                        Categories
+                        <span class="visually-hidden">listing directory filter links navigation cards</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="collapse.html">
+                        Collapse
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="countdown.html">
+                        Countdown
+                        <span class="visually-hidden">timer</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="date-picker.html">
+                        Date / time picker
+                        <span class="visually-hidden">calendar form control input select</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="dropdowns.html">
+                        Dropdowns
+                        <span class="visually-hidden">navigation menu submenu overlay links dropend dropstart dropup</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="filter-widgets.html">
+                        Filter widgets
+                        <span class="visually-hidden">sidebar sort</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="forms.html">
+                        Forms
+                        <span class="visually-hidden">input select textarea checkbox radio range slider picker floating label validation control file switch quantity</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="image-comparison-slider.html">
+                        Image comparison slider
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="input-group.html">
+                        Input group
+                        <span class="visually-hidden">form control select textarea addon</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="input-formatter.html">
+                        Input text formatter
+                        <span class="visually-hidden">form control mask</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="lightbox.html">
+                        Lightbox (Gallery)
+                        <span class="visually-hidden">popup modal overlay image picture video youtube vimeo iframe</span>
+</a>
+</div><div class="dropdown">
+<span class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3 pe-none active">
+                        List group
+                        <span class="visually-hidden">navigation links menu ordered unordered</span>
+</span>
+<ul class="nav nav-underline flex-column border-start ms-2 my-2" id="anchorNav" style="gap: .25rem;">
+<li class="nav-item"><a class="nav-link fw-normal active" href="#list-group-basic">Basic example</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-borderless">Borderless</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-links">Links or buttons</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-flush">Flush</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-icons">With icons and badges</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-checkboxes">Checkboxes and radios</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-numbered">Numbered list group</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-horizontal">Horizontal list group</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-custom">Custom content</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-colors">Color variations</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#list-group-js">JavaScript behavior</a></li>
+</ul>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="listing-cards.html">
+                        Listing cards
+                        <span class="visually-hidden">product service item entry summary</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="map.html">
+                        Map
+                        <span class="visually-hidden">location directions</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="modal.html">
+                        Modal
+                        <span class="visually-hidden">dialog popup overlay lightbox</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="nav-links.html">
+                        Nav links
+                        <span class="visually-hidden">navigation menu links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="navbar.html">
+                        Navbar
+                        <span class="visually-hidden">header navigation menu submenu links brand logo</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="offcanvas.html">
+                        Offcanvas
+                        <span class="visually-hidden">drawer overlay sidebar</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="pagination.html">
+                        Pagination
+                        <span class="visually-hidden">pager navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="pills.html">
+                        Pills
+                        <span class="visually-hidden">navigation links tabs</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="placeholders.html">
+                        Placeholders
+                        <span class="visually-hidden">loading loader</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="popovers.html">
+                        Popovers
+                        <span class="visually-hidden">tooltip overlay popup</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="pricing.html">
+                        Pricing
+                        <span class="visually-hidden">price cost subscription membership payment tier plan package</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="progress.html">
+                        Progress
+                        <span class="visually-hidden">bars status circular</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="reviews.html">
+                        Reviews
+                        <span class="visually-hidden">testimonials feedback stars rating</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="scrollbar.html">
+                        Scrollbar
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="scrollspy.html">
+                        Scrollspy
+                        <span class="visually-hidden">anchor links navigation menu</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="select-box.html">
+                        Select box
+                        <span class="visually-hidden">tags choices input form multiple control</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="spinners.html">
+                        Spinners
+                        <span class="visually-hidden">loading loader</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tabs.html">
+                        Tabs
+                        <span class="visually-hidden">navigation links underline</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="toasts.html">
+                        Toasts
+                        <span class="visually-hidden">notification overlay popup alert feedback</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tooltips.html">
+                        Tooltips
+                        <span class="visually-hidden">overlay popup popover</span>
+</a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-tool fs-lg text-warning me-2"></i>
+                      Utilities &amp; helpers
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="utilities.html">
+                        Finder utilities
+                        <span class="visually-hidden">border background cursor</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="https://getbootstrap.com/docs/5.3/utilities/background/" rel="noreferrer" target="_blank">
+                        Bootstrap utilities
+                        <span class="visually-hidden">border background color text font size position weight display opacity flex space spacing align visibility overflow object float shadow</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="https://getbootstrap.com/docs/5.3/helpers/clearfix/" rel="noreferrer" target="_blank">
+                        Bootstrap helpers
+                        <span class="visually-hidden">position ratio stacks stretched link focus truncation rule</span>
+</a>
+</div></nav>
+</div></div></div></div><div class="simplebar-placeholder" style="width: 294px; height: 3634px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 209px; transform: translate3d(0px, 508px, 0px); display: block;"></div></div></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Page content -->
+<main class="col-lg-9 pt-1 pb-5 mb-sm-2 mb-md-3">
+<!-- Page title -->
+<section class="py-2 pb-sm-3">
+<a class="badge d-inline-flex align-items-center text-info bg-info-subtle fw-semibold text-decoration-none py-2 px-3 mb-2 rounded-pill" href="https://getbootstrap.com/docs/5.3/components/list-group/" rel="noreferrer" target="_blank">
+              Bootstrap docs
+              <i class="fi-external-link fs-sm ms-1"></i>
+</a>
+<h1 class="pt-1">List group</h1>
+<p class="text-body-secondary mb-4">Flexible component for displaying a series of content.</p>
+</section>
+<!-- Basic example -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-basic">
+<h4>Basic example</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-1" aria-selected="true" class="nav-link active" data-bs-target="#preview-1" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-1" aria-selected="false" class="nav-link" data-bs-target="#html-1" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-1" role="tabpanel">
+<ul class="list-group" style="max-width: 300px;">
+<li class="list-group-item">A first item</li>
+<li aria-current="true" class="list-group-item active">An active item</li>
+<li class="list-group-item">A third item</li>
+<li aria-disabled="true" class="list-group-item disabled">A disabled item</li>
+<li class="list-group-item">And a fifth one</li>
+</ul>
+</div>
+<div class="tab-pane pt-4 fade" id="html-1" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-basic-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-basic-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Basic list group --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A first item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item active"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"true"</span>&gt;</span>An active item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A third item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item disabled"</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">"true"</span>&gt;</span>A disabled item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>And a fifth one<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Borderless -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-borderless">
+<h4>Borderless</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-2" aria-selected="true" class="nav-link active" data-bs-target="#preview-2" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-2" aria-selected="false" class="nav-link" data-bs-target="#html-2" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-3 pb-1 mt-3 fade show active" id="preview-2" role="tabpanel">
+<ul class="list-group list-group-borderless" style="max-width: 300px;">
+<li class="list-group-item">A first item</li>
+<li aria-current="true" class="list-group-item active">An active item</li>
+<li class="list-group-item">A third item</li>
+<li aria-disabled="true" class="list-group-item disabled">A disabled item</li>
+<li class="list-group-item">And a fifth one</li>
+</ul>
+</div>
+<div class="tab-pane pt-4 fade" id="html-2" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-borderless-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-borderless-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Borderless list group --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group list-group-borderless"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A first item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item active"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"true"</span>&gt;</span>An active item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A third item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item disabled"</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">"true"</span>&gt;</span>A disabled item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>And a fifth one<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Links or buttons -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-links">
+<h4>Links or buttons</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-3" aria-selected="true" class="nav-link active" data-bs-target="#preview-3" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-3" aria-selected="false" class="nav-link" data-bs-target="#html-3" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 mt-3 fade show active" id="preview-3" role="tabpanel">
+<div class="list-group d-inline-flex w-100 mb-3 me-4" style="max-width: 300px;">
+<a class="list-group-item list-group-item-action" href="#!">A first link item</a>
+<a aria-current="true" class="list-group-item list-group-item-action active" href="#!">The current link item</a>
+<a class="list-group-item list-group-item-action" href="#!">A third link item</a>
+<a aria-disabled="true" class="list-group-item list-group-item-action disabled">A disabled link item</a>
+<a class="list-group-item list-group-item-action" href="#!">And a fifth link item</a>
+</div>
+<div class="list-group list-group-borderless d-inline-flex w-100 mb-1" style="max-width: 300px;">
+<button class="list-group-item list-group-item-action" type="button">A first button item</button>
+<button aria-current="true" class="list-group-item list-group-item-action active" type="button">The current button item</button>
+<button class="list-group-item list-group-item-action" type="button">A third button item</button>
+<button aria-disabled="true" class="list-group-item list-group-item-action disabled" type="button">A disabled button item</button>
+<button class="list-group-item list-group-item-action" type="button">And a fifth button item</button>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-3" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-links-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-links-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Actionable list group made of links --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>A first link item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action active"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"true"</span>&gt;</span>The current link item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>A third link item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action disabled"</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">"true"</span>&gt;</span>A disabled link item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>And a fifth link item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Actionable borderless list group made of buttons --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group list-group-borderless"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span>&gt;</span>A first button item<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action active"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"true"</span>&gt;</span>The current button item<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span>&gt;</span>A third button item<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action disabled"</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">"true"</span>&gt;</span>A disabled button item<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span>&gt;</span>And a fifth button item<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Flush -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-flush">
+<h4>Flush</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-4" aria-selected="true" class="nav-link active" data-bs-target="#preview-4" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-4" aria-selected="false" class="nav-link" data-bs-target="#html-4" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-3 mt-3 fade show active" id="preview-4" role="tabpanel">
+<ul class="list-group list-group-flush" style="max-width: 300px;">
+<li class="list-group-item">A first item</li>
+<li class="list-group-item">An second item</li>
+<li class="list-group-item">A third item</li>
+<li class="list-group-item">A fourth item</li>
+<li class="list-group-item">And a fifth one</li>
+</ul>
+</div>
+<div class="tab-pane pt-4 fade" id="html-4" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-flush-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-flush-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Flush list group to render items edge-to-edge in a parent container (e.g., cards) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group list-group-flush"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A first item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>An second item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A third item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A fourth item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>And a fifth one<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- With icons and badges -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-icons">
+<h4>With icons and badges</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-5" aria-selected="true" class="nav-link active" data-bs-target="#preview-5" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-5" aria-selected="false" class="nav-link" data-bs-target="#html-5" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 mt-3 fade show active" id="preview-5" role="tabpanel">
+<div class="list-group" style="max-width: 300px;">
+<a class="list-group-item list-group-item-action d-flex align-items-center" href="#!">
+<i class="fi-message-circle fs-base opacity-75 me-2"></i>
+                        Messages
+                        <span class="badge bg-info rounded-pill ms-auto">5</span>
+</a>
+<a class="list-group-item list-group-item-action d-flex align-items-center" href="#!">
+<i class="fi-shopping-bag fs-base opacity-75 me-2"></i>
+                        Orders
+                        <span class="badge bg-warning rounded-pill ms-auto">3</span>
+</a>
+<a class="list-group-item list-group-item-action d-flex align-items-center" href="#!">
+<i class="fi-bell fs-base opacity-75 me-2"></i>
+                        Notifications
+                        <span class="badge bg-success rounded-pill ms-auto">7</span>
+</a>
+<a class="list-group-item list-group-item-action d-flex align-items-center" href="#!">
+<i class="fi-heart fs-base opacity-75 me-2"></i>
+                        Favorites
+                        <span class="badge bg-danger rounded-pill ms-auto">2</span>
+</a>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-5" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-icons-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-icons-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- List group with icons and badges --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action d-flex align-items-center"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-message-circle fs-base opacity-75 me-2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    Messages
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"badge bg-info rounded-pill ms-auto"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action d-flex align-items-center"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-shopping-bag fs-base opacity-75 me-2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    Orders
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"badge bg-warning rounded-pill ms-auto"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action d-flex align-items-center"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-bell fs-base opacity-75 me-2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    Notifications
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"badge bg-success rounded-pill ms-auto"</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action d-flex align-items-center"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-heart fs-base opacity-75 me-2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    Favorites
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"badge bg-danger rounded-pill ms-auto"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Checkboxes and radios -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-checkboxes">
+<h4>Checkboxes and radios</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-6" aria-selected="true" class="nav-link active" data-bs-target="#preview-6" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-6" aria-selected="false" class="nav-link" data-bs-target="#html-6" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-6" role="tabpanel">
+<div class="row">
+<div class="col-xl-5 col-sm-6 mb-4 mb-sm-0">
+<div class="list-group">
+<label class="list-group-item">
+<input checked="" class="form-check-input me-2" type="checkbox" value="first"/>
+                            First checkbox
+                          </label>
+<label class="list-group-item">
+<input class="form-check-input me-2" type="checkbox" value="second"/>
+                            Second checkbox
+                          </label>
+<label class="list-group-item">
+<input class="form-check-input me-2" type="checkbox" value="third"/>
+                            Third checkbox
+                          </label>
+<label class="list-group-item">
+<input class="form-check-input me-2" type="checkbox" value="fourth"/>
+                            Fourth checkbox
+                          </label>
+</div>
+</div>
+<div class="col-xl-5 col-sm-6">
+<div class="list-group">
+<label class="list-group-item">
+<input checked="" class="form-check-input me-2" name="lg-radio" type="radio" value="first"/>
+                            First radio
+                          </label>
+<label class="list-group-item">
+<input class="form-check-input me-2" name="lg-radio" type="radio" value="second"/>
+                            Second radio
+                          </label>
+<label class="list-group-item">
+<input class="form-check-input me-2" name="lg-radio" type="radio" value="third"/>
+                            Third radio
+                          </label>
+<label class="list-group-item">
+<input class="form-check-input me-2" name="lg-radio" type="radio" value="fourth"/>
+                            Fourth radio
+                          </label>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-6" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-checkboxes-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-checkboxes-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- List group with checkboxes --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check-input me-2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"first"</span> <span class="hljs-attr">checked</span>&gt;</span>
+    First checkbox
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check-input me-2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"second"</span>&gt;</span>
+    Second checkbox
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check-input me-2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"third"</span>&gt;</span>
+    Third checkbox
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check-input me-2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"fourth"</span>&gt;</span>
+    Fourth checkbox
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- List group with radio buttons --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check-input me-2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"lg-radio"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"first"</span> <span class="hljs-attr">checked</span>&gt;</span>
+    First radio
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check-input me-2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"lg-radio"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"second"</span>&gt;</span>
+    Second radio
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check-input me-2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"lg-radio"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"third"</span>&gt;</span>
+    Third radio
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check-input me-2"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"lg-radio"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"fourth"</span>&gt;</span>
+    Fourth radio
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Numbered list group -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-numbered">
+<h4>Numbered list group</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-7" aria-selected="true" class="nav-link active" data-bs-target="#preview-7" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-7" aria-selected="false" class="nav-link" data-bs-target="#html-7" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-7" role="tabpanel">
+<ol class="list-group list-group-numbered" style="max-width: 300px;">
+<li class="list-group-item">A list item</li>
+<li class="list-group-item">A list item</li>
+<li class="list-group-item">A list item</li>
+<li class="list-group-item">A list item</li>
+</ol>
+</div>
+<div class="tab-pane pt-4 fade" id="html-7" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-numbered-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-numbered-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Numbered list group --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ol</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group list-group-numbered"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A list item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A list item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A list item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A list item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Horizontal list group -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-horizontal">
+<h4>Horizontal list group</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-8" aria-selected="true" class="nav-link active" data-bs-target="#preview-8" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-8" aria-selected="false" class="nav-link" data-bs-target="#html-8" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-8" role="tabpanel">
+<ul class="list-group list-group-horizontal mb-3">
+<li class="list-group-item">A first item</li>
+<li class="list-group-item">A second item</li>
+<li class="list-group-item">A third item</li>
+</ul>
+<ul class="list-group list-group-horizontal mb-3">
+<li class="list-group-item flex-fill text-center">A first item</li>
+<li class="list-group-item flex-fill text-center">A second item</li>
+<li class="list-group-item flex-fill text-center">A third item</li>
+</ul>
+<div class="list-group list-group-horizontal mb-3">
+<a aria-current="true" class="list-group-item list-group-item-action text-center active" href="#!">An active link</a>
+<a class="list-group-item list-group-item-action text-center" href="#!">A second link</a>
+<a class="list-group-item list-group-item-action text-center" href="#!">A third link</a>
+</div>
+<div class="list-group list-group-borderless list-group-horizontal">
+<a class="list-group-item list-group-item-action text-center" href="#!">A first link</a>
+<a aria-current="true" class="list-group-item list-group-item-action text-center active" href="#!">An active link</a>
+<a class="list-group-item list-group-item-action text-center" href="#!">A third link</a>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-8" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-horizontal-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-horizontal-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Basic horizontal list group. Alternatively, choose a responsive variant .list-group-horizontal-{sm|md|lg|xl|xxl} to make a list group horizontal starting at that breakpoint's min-width --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group list-group-horizontal"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A first item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A second item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A third item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Justified horizontal list group --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group list-group-horizontal"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item flex-fill text-center"</span>&gt;</span>A first item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item flex-fill text-center"</span>&gt;</span>A second item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item flex-fill text-center"</span>&gt;</span>A third item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Actionable (links) horizontal list group --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group list-group-horizontal"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action text-center active"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"true"</span>&gt;</span>An active link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action text-center"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>A second link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action text-center"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>A third link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Actionable (links) borderless horizontal list group --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group list-group-borderless list-group-horizontal"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action text-center active"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"true"</span>&gt;</span>An active link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action text-center"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>A second link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action text-center"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>A third link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Custom content -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-custom">
+<h4>Custom content</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-9" aria-selected="true" class="nav-link active" data-bs-target="#preview-9" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-9" aria-selected="false" class="nav-link" data-bs-target="#html-9" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-9" role="tabpanel">
+<div class="list-group" style="max-width: 400px;">
+<a aria-current="true" class="list-group-item list-group-item-action p-3 fw-normal active" href="#!">
+<div class="d-flex w-100 justify-content-between">
+<h6 class="mb-1">List group item heading</h6>
+<small>3 days ago</small>
+</div>
+<p class="mb-1">Some placeholder content in a paragraph.</p>
+<small>And some small print.</small>
+</a>
+<a class="list-group-item list-group-item-action p-3 fw-normal" href="#!">
+<div class="d-flex w-100 justify-content-between">
+<h6 class="mb-1">List group item heading</h6>
+<small class="text-body-secondary">3 days ago</small>
+</div>
+<p class="mb-1">Some placeholder content in a paragraph.</p>
+<small class="text-body-tertiary">And some muted small print.</small>
+</a>
+<a class="list-group-item list-group-item-action p-3 fw-normal" href="#!">
+<div class="d-flex w-100 justify-content-between">
+<h6 class="mb-1">List group item heading</h6>
+<small class="text-body-secondary">3 days ago</small>
+</div>
+<p class="mb-1">Some placeholder content in a paragraph.</p>
+<small class="text-body-tertiary">And some muted small print.</small>
+</a>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-9" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-custom-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-custom-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- List group with custom content --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action p-3 fw-normal active"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex w-100 justify-content-between"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-1"</span>&gt;</span>List group item heading<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>3 days ago<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-1"</span>&gt;</span>Some placeholder content in a paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>And some small print.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action p-3 fw-normal"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex w-100 justify-content-between"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-1"</span>&gt;</span>List group item heading<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">small</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-body-secondary"</span>&gt;</span>3 days ago<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-1"</span>&gt;</span>Some placeholder content in a paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">small</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-body-tertiary"</span>&gt;</span>And some muted small print.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action p-3 fw-normal"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex w-100 justify-content-between"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-1"</span>&gt;</span>List group item heading<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">small</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-body-secondary"</span>&gt;</span>3 days ago<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-1"</span>&gt;</span>Some placeholder content in a paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">small</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-body-tertiary"</span>&gt;</span>And some muted small print.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Color variations -->
+<section class="docs-section pb-sm-2 mb-5" id="list-group-colors">
+<h4>Color variations</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-10" aria-selected="true" class="nav-link active" data-bs-target="#preview-10" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-10" aria-selected="false" class="nav-link" data-bs-target="#html-10" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-10" role="tabpanel">
+<ul class="list-group" style="max-width: 350px;">
+<li class="list-group-item">A simple default list group item</li>
+<li class="list-group-item list-group-item-primary">A simple primary list group item</li>
+<li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+<li class="list-group-item list-group-item-success">A simple success list group item</li>
+<li class="list-group-item list-group-item-danger">A simple danger list group item</li>
+<li class="list-group-item list-group-item-warning">A simple warning list group item</li>
+<li class="list-group-item list-group-item-info">A simple info list group item</li>
+<li class="list-group-item list-group-item-light">A simple light list group item</li>
+<li class="list-group-item list-group-item-dark">A simple dark list group item</li>
+</ul>
+</div>
+<div class="tab-pane pt-4 fade" id="html-10" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-colors-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-colors-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Use contextual classes to style list items with a stateful background and color. --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item"</span>&gt;</span>A simple default list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-primary"</span>&gt;</span>A simple primary list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-secondary"</span>&gt;</span>A simple secondary list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-success"</span>&gt;</span>A simple success list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-danger"</span>&gt;</span>A simple danger list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-warning"</span>&gt;</span>A simple warning list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-info"</span>&gt;</span>A simple info list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-light"</span>&gt;</span>A simple light list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-dark"</span>&gt;</span>A simple dark list group item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- JavaScript behavior -->
+<section class="docs-section" id="list-group-js">
+<h4>JavaScript behavior</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-11" aria-selected="true" class="nav-link active" data-bs-target="#preview-11" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-11" aria-selected="false" class="nav-link" data-bs-target="#html-11" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-11" role="tabpanel">
+<div class="row">
+<div class="col-md-4">
+<div class="list-group" role="tablist">
+<a aria-controls="list-home" aria-selected="true" class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#list-home" id="list-home-list" role="tab">Home</a>
+<a aria-controls="list-profile" aria-selected="false" class="list-group-item list-group-item-action" data-bs-toggle="list" href="#list-profile" id="list-profile-list" role="tab" tabindex="-1">Profile</a>
+<a aria-controls="list-messages" aria-selected="false" class="list-group-item list-group-item-action" data-bs-toggle="list" href="#list-messages" id="list-messages-list" role="tab" tabindex="-1">Messages</a>
+<a aria-controls="list-settings" aria-selected="false" class="list-group-item list-group-item-action" data-bs-toggle="list" href="#list-settings" id="list-settings-list" role="tab" tabindex="-1">Settings</a>
+</div>
+</div>
+<div class="col-md-8 pt-4 pt-md-0">
+<div class="tab-content">
+<div aria-labelledby="list-home-list" class="tab-pane fade show active" id="list-home" role="tabpanel">Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim voluptatum iure autem atque quaerat.</div>
+<div aria-labelledby="list-profile-list" class="tab-pane fade" id="list-profile" role="tabpanel">Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa commodo itaque dolores dolorum similique architecto.</div>
+<div aria-labelledby="list-messages-list" class="tab-pane fade" id="list-messages" role="tabpanel">Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat enim tempor. Consectetur est minim nostrud nostrud consectetur irure labore voluptate irure. Ipsum id Lorem sit sint voluptate est pariatur eu ad cupidatat et deserunt culpa sit eiusmod deserunt. Consectetur et fugiat anim do eiusmod aliquip.</div>
+<div aria-labelledby="list-settings-list" class="tab-pane fade" id="list-settings" role="tabpanel">Irure enim occaecat labore sit qui aliquip reprehenderit amet velit. Deserunt ullamco ex elit nostrud ut dolore nisi officia magna sit occaecat laboris sunt dolor. Nisi eu minim cillum occaecat aute est cupidatat aliqua labore aute occaecat ea aliquip sunt amet. Aute mollit dolor ut exercitation irure commodo non amet consectetur quis amet culpa. Quis ullamco nisi amet qui aute irure eu. Magna labore dolor quis ex labore id nostrud deserunt dolor eiusmod.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-11" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#list-group-js-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="list-group-js-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-md-4"</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Nav tabs in format of list group --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tablist"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action active"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#list-home"</span> <span class="hljs-attr">data-bs-toggle</span>=<span class="hljs-string">"list"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"list-home"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-home-list"</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">"true"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#list-profile"</span> <span class="hljs-attr">data-bs-toggle</span>=<span class="hljs-string">"list"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"list-profile"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-profile-list"</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>Profile<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#list-messages"</span> <span class="hljs-attr">data-bs-toggle</span>=<span class="hljs-string">"list"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"list-messages"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-messages-list"</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>Messages<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-group-item list-group-item-action"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#list-settings"</span> <span class="hljs-attr">data-bs-toggle</span>=<span class="hljs-string">"list"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"list-settings"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-settings-list"</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>Settings<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-md-8 pt-4 pt-md-0"</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Tab content --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-pane fade show active"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-home"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tabpanel"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"list-home-list"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-pane fade"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-profile"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tabpanel"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"list-profile-list"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-pane fade"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-messages"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tabpanel"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"list-messages-list"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-pane fade"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-settings"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tabpanel"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"list-settings-list"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+<!-- Back to top button -->
+<div class="floating-buttons position-fixed top-50 end-0 z-sticky me-3 me-xl-4 pb-4">
+<a class="btn-scroll-top btn btn-sm bg-body border-0 rounded-pill shadow animate-slide-end" href="#top">
+        Top
+        <i class="fi-arrow-right fs-base ms-1 me-n1 animate-target"></i>
+<span class="position-absolute top-0 start-0 w-100 h-100 border rounded-pill z-0"></span>
+<svg class="position-absolute top-0 start-0 w-100 h-100 z-1" fill="none" viewbox="0 0 62 32" xmlns="http://www.w3.org/2000/svg">
+<rect height="30.5" rx="15.25" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5" style="stroke-dasharray: 155.201; stroke-dashoffset: 155.201;" width="60.5" x=".75" y=".75"></rect>
+</svg>
+</a>
+<a aria-controls="customizer" class="btn btn-sm btn-outline-secondary text-uppercase bg-body rounded-pill shadow animate-rotate ms-2 me-n5" data-bs-toggle="offcanvas" href="#customizer" role="button" style="font-size: .625rem; letter-spacing: .05rem;">
+        Customize<i class="fi-settings fs-base ms-1 me-n2 animate-target"></i>
+</a>
+</div>
+<!-- Vendor scripts -->
+<script src="../ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/vendor/simplebar/simplebar.min.js"></script>
+<script src="../assets/vendor/list.js/list.min.js"></script>
+<!-- Bootstrap + Theme scripts -->
+<script src="../assets/js/theme.min.js"></script>
+<!-- Docs specific scripts -->
+<script>
+      const sidebar = new bootstrap.Offcanvas('#sidebarNav')
+      const closeSidebar = () => {
+        setTimeout(() => {
+          sidebar.hide()
+        }, 500)
+      }
+      (() => {
+        const scrollable = document.getElementById('scrollable')
+        const simplebar = new SimpleBar(scrollable)
+        const anchor = scrollable.querySelector('.list-group-item.active')
+        if (anchor === null) return
+        simplebar.getScrollElement().scrollTo({
+          top: anchor.parentNode.offsetTop,
+          behavior: 'instant'
+        })
+      })()
+    </script>
+</body></html>

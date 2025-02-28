@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" data-pwa="true" dir="ltr" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Finder Docs | Pricing</title>
+<!-- Theme switcher (color modes) -->
+<script src="../assets/js/theme-switcher.js"></script>
+<!-- Webmanifest + Favicon / App icons -->
+<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../manifest.json" rel="manifest"/>
+<link href="../assets/app-icons/icon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/app-icons/icon-180x180.png" rel="apple-touch-icon"/>
+<!-- Preloaded local web font (Inter) -->
+<link as="font" crossorigin="" href="../assets/fonts/inter-variable-latin.woff2" rel="preload" type="font/woff2"/>
+<!-- Font icons -->
+<link as="font" crossorigin="" href="../assets/icons/finder-icons.woff2" rel="preload" type="font/woff2"/>
+<link href="../assets/icons/finder-icons.min.css" rel="stylesheet"/>
+<!-- Vendor styles -->
+<link href="../ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<link href="../assets/vendor/simplebar/simplebar.min.css" rel="stylesheet"/>
+<!-- Bootstrap + Theme styles -->
+<link as="style" href="../assets/css/theme.min.css" rel="preload"/>
+<link as="style" href="../assets/css/theme.rtl.min.css" rel="preload"/>
+<link href="../assets/css/theme.min.css" id="theme-styles" rel="stylesheet"/>
+<!-- Customizer -->
+<script src="../assets/js/customizer.min.js"></script><style id="customizer-styles">:root,[data-bs-theme="light"]{}[data-bs-theme="dark"]{}.btn-primary{}.btn-success{}.btn-warning{}.btn-danger{}.btn-info{}.btn-outline-primary{}.btn-outline-success{}.btn-outline-warning{}.btn-outline-danger{}.btn-outline-info{}</style>
+<!-- Docs specific styles -->
+<style>
+      .docs-section {
+        scroll-margin-top: 100px;
+      }
+      @media (min-width: 992px) {
+        .docs-sidebar {
+          position: sticky;
+          top: 7rem;
+          height: calc(100vh - 8.5rem);
+        }
+        .docs-section {
+          scroll-margin-top: 118px;
+        }
+      }
+    </style>
+</head>
+<!-- Body -->
+<body data-bs-spy="scroll" data-bs-target="#anchorNav">
+<!-- Customizer offcanvas -->
+<div class="offcanvas offcanvas-end" id="customizer" tabindex="-1">
+<div class="offcanvas-header border-bottom">
+<h4 class="h5 offcanvas-title">Customize theme</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<!-- Customizer settings -->
+<div class="customizer-collapse collapse show" id="customizerSettings">
+<!-- Colors -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center mb-3">
+<i class="fi-swatches text-body-tertiary fs-5 me-2"></i>
+<h5 class="fs-lg mb-0">Colors</h5>
+</div>
+<div class="row row-cols-2 g-3" id="theme-colors">
+<div class="col">
+<h6 class="fs-sm mb-2">Primary</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-primary", "primary", "primary-rgb"]' id="theme-primary">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#d85151"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="primary" style="max-width: 38px; background-color: #d85151"></label>
+<input class="visually-hidden" id="primary" type="color" value="#d85151"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Success</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-success", "success", "success-rgb"]' id="theme-success">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#33b36b"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="success" style="max-width: 38px; background-color: #33b36b"></label>
+<input class="visually-hidden" id="success" type="color" value="#33b36b"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Warning</h6>
+<div class="color-swatch d-flex border rounded gap-3 p-2" data-color-labels='["theme-warning", "warning", "warning-rgb"]' id="theme-warning">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#fc9231"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="warning" style="max-width: 38px; background-color: #fc9231"></label>
+<input class="visually-hidden" id="warning" type="color" value="#fc9231"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Danger</h6>
+<div class="color-swatch d-flex border rounded gap-2 p-2" data-color-labels='["theme-danger", "danger", "danger-rgb"]' id="theme-danger">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#f03d3d"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="danger" style="max-width: 38px; background-color: #f03d3d"></label>
+<input class="visually-hidden" id="danger" type="color" value="#f03d3d"/>
+</div>
+</div>
+<div class="col">
+<h6 class="fs-sm mb-2">Info</h6>
+<div class="color-swatch d-flex border rounded gap-2 p-2" data-color-labels='["theme-info", "info", "info-rgb"]' id="theme-info">
+<input class="form-control bg-transparent border-0 rounded-0 p-1" type="text" value="#3d7a81"/>
+<label class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" for="info" style="max-width: 38px; background-color: #3d7a81"></label>
+<input class="visually-hidden" id="info" type="color" value="#3d7a81"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Direction -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-sort text-body-tertiary fs-lg me-2" style="transform: rotate(90deg)"></i>
+<h5 class="fs-lg mb-0">Direction</h5>
+</div>
+<div class="d-flex align-items-center justify-content-between border rounded p-3">
+<div class="me-3">
+<h6 class="mb-1">RTL</h6>
+<p class="fs-sm mb-0">Change text direction</p>
+</div>
+<div class="form-check form-switch m-0">
+<input class="form-check-input" id="rtl-switch" role="switch" type="checkbox"/>
+</div>
+</div>
+<div class="alert alert-info p-2 mt-2 mb-0">
+<div class="d-flex text-body-emphasis fs-xs py-1 pe-1">
+<i class="fi-info text-info fs-lg mb-2 mb-sm-0" style="margin-top: .125rem"></i>
+<div class="ps-2">To switch the text direction of your webpage from LTR to RTL, please consult the detailed instructions provided in the relevant section of our documentation.</div>
+</div>
+</div>
+</div>
+<!-- Border width -->
+<div class="pb-4 mb-2">
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-menu text-body-tertiary fs-lg me-2"></i>
+<h5 class="fs-lg mb-0">Border width, px</h5>
+</div>
+<div class="slider-input d-flex align-items-center gap-3 border rounded p-3" id="border-input">
+<input class="form-range" max="10" min="0" step="1" type="range" value="1"/>
+<input class="form-control" id="border-width" max="10" min="0" style="max-width: 5.5rem" type="number" value="1"/>
+</div>
+</div>
+<!-- Rounding -->
+<div class="d-flex align-items-center pb-1 mb-2">
+<i class="fi-maximize text-body-tertiary fs-lg me-2"></i>
+<h5 class="fs-lg mb-0">Rounding, rem</h5>
+</div>
+<div class="slider-input d-flex align-items-center gap-3 border rounded p-3">
+<input class="form-range" max="5" min="0" step=".05" type="range" value="0.5"/>
+<input class="form-control" id="border-radius" max="5" min="0" step=".05" style="max-width: 5.5rem" type="number" value="0.5"/>
+</div>
+</div>
+<!-- Customizer code -->
+<div class="customizer-collapse collapse" id="customizerCode">
+<div class="nav mb-3">
+<a aria-controls="customizerSettings customizerCode" aria-expanded="true" class="nav-link position-relative fs-base p-0" data-bs-toggle="collapse" href=".customizer-collapse">
+<i class="fi-chevron-left fs-lg ms-n1 me-1"></i>
+<span class="hover-effect-underline stretched-link">Back to settings</span>
+</a>
+</div>
+<p class="fs-sm pb-1">To apply the provided styles to your webpage, enclose them within a <code>&lt;style&gt;</code> tag and insert this tag into the <code>&lt;head&gt;</code> section of your HTML document after the following link to the main stylesheet:<br/><code>&lt;link href="assets/css/theme.min.css"&gt;</code></p>
+<div class="position-relative bg-body-tertiary rounded overflow-hidden pt-3">
+<div class="position-absolute top-0 start-0 w-100 p-3">
+<button class="btn btn-sm btn-outline-dark w-100" data-copy-text-from="#generated-styles" data-done-label="Code copied" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                Copy code
+              </button>
+</div>
+<pre class="text-wrap bg-transparent border-0 fs-xs text-body-emphasis p-4 pt-5" id="generated-styles"></pre>
+</div>
+</div>
+</div>
+<!-- Offcanvas footer (Action buttons) -->
+<div class="offcanvas-header border-top gap-3 d-none" id="customizer-btns">
+<button class="btn btn-lg btn-secondary w-100 fs-sm" id="customizer-reset" type="button">
+<i class="fi-trash fs-lg me-2 ms-n1"></i>
+          Reset
+        </button>
+<button aria-controls="customizerSettings customizerCode" aria-expanded="false" class="btn btn-lg btn-primary hiding-collapse-toggle w-100 fs-sm collapsed" data-bs-target=".customizer-collapse" data-bs-toggle="collapse" type="button">
+<i class="fi-code fs-lg me-2 ms-n1"></i>
+          Show code
+        </button>
+</div>
+</div>
+<!-- Navigation bar (Header) -->
+<header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top z-fixed px-0" data-bs-theme="dark">
+<div class="container py-1 py-lg-2">
+<button aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle sidebar navigation" class="navbar-toggler me-3" data-bs-target="#sidebarNav" data-bs-toggle="offcanvas" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<a class="navbar-brand mx-auto mx-lg-0" href="../index.html">
+<span class="d-flex flex-shrink-0 text-primary rtl-flip me-2">
+<svg height="34" width="35" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 16.894v10.731c0 3.506-2.869 6.375-6.375 6.375H17.5h-.85C7.725 33.575.5 26.138.5 17c0-9.35 7.65-17 17-17s17 7.544 17 16.894z" fill="currentColor"></path><g fill-rule="evenodd"><path d="M17.5 13.258c-3.101 0-5.655 2.554-5.655 5.655s2.554 5.655 5.655 5.655 5.655-2.554 5.655-5.655-2.554-5.655-5.655-5.655zm-9.433 5.655c0-5.187 4.246-9.433 9.433-9.433s9.433 4.246 9.433 9.433a9.36 9.36 0 0 1-1.569 5.192l2.397 2.397a1.89 1.89 0 0 1 0 2.671 1.89 1.89 0 0 1-2.671 0l-2.397-2.397a9.36 9.36 0 0 1-5.192 1.569c-5.187 0-9.433-4.246-9.433-9.433z" fill="#000" fill-opacity=".05"></path><g fill="#fff"><path d="M17.394 10.153c-3.723 0-6.741 3.018-6.741 6.741s3.018 6.741 6.741 6.741 6.741-3.018 6.741-6.741-3.018-6.741-6.741-6.741zM7.347 16.894A10.05 10.05 0 0 1 17.394 6.847 10.05 10.05 0 0 1 27.44 16.894 10.05 10.05 0 0 1 17.394 26.94 10.05 10.05 0 0 1 7.347 16.894z"></path><path d="M23.025 22.525c.645-.645 1.692-.645 2.337 0l3.188 3.188c.645.645.645 1.692 0 2.337s-1.692.645-2.337 0l-3.187-3.187c-.645-.646-.645-1.692 0-2.337z"></path></g></g><path d="M23.662 14.663c2.112 0 3.825-1.713 3.825-3.825s-1.713-3.825-3.825-3.825-3.825 1.713-3.825 3.825 1.713 3.825 3.825 3.825z" fill="#fff"></path><path d="M23.663 8.429a2.41 2.41 0 0 0-2.408 2.408 2.41 2.41 0 0 0 2.408 2.408 2.41 2.41 0 0 0 2.408-2.408 2.41 2.41 0 0 0-2.408-2.408zm-5.242 2.408c0-2.895 2.347-5.242 5.242-5.242s5.242 2.347 5.242 5.242-2.347 5.242-5.242 5.242-5.242-2.347-5.242-5.242z" fill="currentColor" fill-rule="evenodd"></path></svg>
+</span>
+          Finder
+          <span class="badge text-primary bg-primary bg-opacity-10 fs-xs rounded-pill d-none d-lg-inline-block ms-2">v2.0.0</span>
+</a>
+<div aria-labelledby="navbarNavLabel" class="offcanvas-lg offcanvas-end ms-auto" id="navbarNav" tabindex="-1">
+<div class="offcanvas-header py-3">
+<h5 class="offcanvas-title" id="navbarNavLabel">Finder</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarNav" type="button"></button>
+</div>
+<div class="offcanvas-body pt-0">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="installation.html">Docs</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" href="typography.html">Components</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../index.html">Live demo</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://createx.studio/contact" rel="noreferrer" target="_blank">Support</a>
+</li>
+</ul>
+</div>
+<div class="offcanvas-header border-top">
+<a class="btn btn-primary w-100" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" rel="noreferrer" target="_blank">
+<i class="fi-shopping-bag fs-base ms-n1 me-2"></i>
+              Buy now
+            </a>
+</div>
+</div>
+<div class="dropdown pe-lg-1 ms-lg-3">
+<button aria-expanded="false" aria-label="Toggle theme (light)" class="theme-switcher btn btn-icon btn-secondary fs-base rounded-circle animate-scale" data-bs-toggle="dropdown" type="button">
+<span class="theme-icon-active d-flex animate-target">
+<i class="fi-sun"></i>
+</span>
+</button>
+<ul class="dropdown-menu dropdown-menu-end" style="--fn-dropdown-spacer: .625rem; --fn-dropdown-min-width: 9rem">
+<li>
+<button aria-pressed="true" class="dropdown-item active" data-bs-theme-value="light" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-sun"></i>
+</span>
+<span class="theme-label">Light</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+<li>
+<button aria-pressed="false" class="dropdown-item" data-bs-theme-value="dark" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-moon"></i>
+</span>
+<span class="theme-label">Dark</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+<li>
+<button aria-pressed="false" class="dropdown-item" data-bs-theme-value="auto" type="button">
+<span class="theme-icon d-flex fs-base me-2">
+<i class="fi-auto"></i>
+</span>
+<span class="theme-label">Auto</span>
+<i class="item-active-indicator fi-check ms-auto"></i>
+</button>
+</li>
+</ul>
+</div>
+<button aria-controls="navbarNav" aria-label="Toggle navbar navigation" class="btn btn-icon btn-outline-secondary border-0 d-lg-none ms-2 me-n2" data-bs-target="#navbarNav" data-bs-toggle="offcanvas" type="button">
+<i class="fi-more-horizontal fs-3"></i>
+</button>
+<a class="btn btn-primary animate-shake d-none d-lg-inline-flex ms-4" href="https://themes.getbootstrap.com/product/finder-directory-listings-template-ui-kit/" rel="noreferrer" target="_blank">
+<i class="fi-shopping-bag fs-base animate-target ms-n1 me-2"></i>
+          Buy now
+        </a>
+</div>
+</header>
+<!-- Page container -->
+<div class="container pt-4">
+<div class="row pt-sm-2">
+<!-- Sidebar navigation -->
+<aside class="col-lg-3 pe-xl-4">
+<div class="docs-sidebar" data-filter-list='{"searchClass": "docs-search", "listClass": "docs-list", "valueNames": ["list-group-item"]}'>
+<div aria-labelledby="sidebarNavLabel" class="offcanvas-lg offcanvas-start d-flex flex-column h-100" id="sidebarNav" tabindex="-1">
+<div class="offcanvas-header py-3">
+<h5 class="offcanvas-title" id="sidebarNavLabel">Browse docs</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarNav" type="button"></button>
+</div>
+<div class="position-relative mx-4 ms-lg-0 mb-4">
+<i class="fi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+<input class="docs-search form-control form-icon-start" placeholder="Quick search..." type="search"/>
+<button class="btn btn-sm btn-outline-secondary w-auto border-0 p-1 position-absolute top-50 end-0 translate-middle-y me-2 opacity-0">
+<svg class="opacity-75" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+<path d="M18.619 5.381a.875.875 0 0 1 0 1.238l-12 12A.875.875 0 0 1 5.38 17.38l12-12a.875.875 0 0 1 1.238 0Z"></path><path d="M5.381 5.381a.875.875 0 0 1 1.238 0l12 12a.875.875 0 1 1-1.238 1.238l-12-12a.875.875 0 0 1 0-1.238Z"></path>
+</svg>
+</button></div>
+<div class="offcanvas-body d-block flex-grow-1 overflow-hidden pt-0 pe-0 pb-lg-2">
+<div class="h-100 overflow-y-auto pe-4 simplebar-scrollable-y" data-simplebar="init" id="scrollable"><div class="simplebar-wrapper" style="margin: 0px -24px 0px 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div aria-label="scrollable content" class="simplebar-content-wrapper" role="region" style="height: 100%; overflow: hidden scroll;" tabindex="0"><div class="simplebar-content" style="padding: 0px 24px 0px 0px;">
+<nav class="docs-list list-group list-group-borderless" onclick="closeSidebar()"><h3 class="h6 d-flex align-items-center pb-1 mb-2">
+<i class="fi-book fs-lg text-success me-2"></i>
+                      Getting started
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="installation.html">
+                        Installation
+                        <span class="visually-hidden">setup npm prerequisites</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle text-wrap pe-3" href="npm-scripts.html">
+                        Npm commands (Scripts)
+                        <span class="visually-hidden">dev build styles:compile styles:minify scripts:compile scripts:minify icon-font vendor validate watch dist</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="structure.html">
+                        File structure
+                        <span class="visually-hidden">project folders</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="configuration.html">
+                        Configuration files
+                        <span class="visually-hidden">package.json config.js babelrc browserslistrc editorconfig eslintrc gitignore htmlvalidate prettierignore prettierrc stylelintrc webmanifest manifest.json</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle text-wrap pe-3" href="pwa.html">
+                        Progressive Web App (PWA)
+                        <span class="visually-hidden">service worker manifest</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="web-font.html">
+                        Web font(s)
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="icon-font.html">
+                        Icon font
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="performance.html">
+                        Performance: CLS &amp; Preload
+                        <span class="visually-hidden">cumulative layout shift loading aspect-ratio</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="browser-support.html">
+                        Browser support
+                        <span class="visually-hidden">autoprefixer</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="rtl.html">Right-to-Left (RTL)</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="deployment.html">
+                        Deployment guide
+                        <span class="visually-hidden">launch hosting publishing rollout go-live</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="credits.html">
+                        Sources and credits
+                        <span class="visually-hidden">resources plugins libraries frameworks assets</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="changelog.html">
+                        Changelog
+                        <span class="visually-hidden">updates</span>
+</a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-settings fs-lg text-primary me-2"></i>
+                      Customize
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="options.html">
+                        Global options
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="colors.html">
+                        Colors
+                        <span class="visually-hidden">grayscale primary secondary info warning success danger dark light</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3 text-wrap" href="color-modes.html">
+                        Color modes (Light/Dark)
+                        <span class="visually-hidden">themes</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="css-variables.html">
+                        CSS variables
+                      </a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-file-text fs-lg text-secondary me-2"></i>
+                      Content
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="typography.html">
+                        Typography
+                        <span class="visually-hidden">text font heading title paragraph list ordered unordered description blockquote quotation abbreviation</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="icons.html">Icons</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="code.html">
+                        Code
+                        <span class="visually-hidden">pre kbd highlight</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="images.html">
+                        Images &amp; figures
+                        <span class="visually-hidden">thumbnails picture</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tables.html">
+                        Tables
+                      </a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-layers fs-lg text-info me-2"></i>
+                      Components
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="accordion.html">
+                        Accordion
+                        <span class="visually-hidden">collapse</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="alerts.html">
+                        Alerts
+                        <span class="visually-hidden">notification callout</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="badges.html">
+                        Badges
+                        <span class="visually-hidden">count indicator</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="blog-components.html">
+                        Blog components
+                        <span class="visually-hidden">post article</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="breadcrumb.html">
+                        Breadcrumb
+                        <span class="visually-hidden">navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="buttons.html">
+                        Buttons
+                        <span class="visually-hidden">navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="button-group.html">
+                        Button group
+                        <span class="visually-hidden">navigation link</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="card.html">
+                        Card
+                        <span class="visually-hidden">box container</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="carousel.html">
+                        Carousel (Slider)
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="categories.html">
+                        Categories
+                        <span class="visually-hidden">listing directory filter links navigation cards</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="collapse.html">
+                        Collapse
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="countdown.html">
+                        Countdown
+                        <span class="visually-hidden">timer</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="date-picker.html">
+                        Date / time picker
+                        <span class="visually-hidden">calendar form control input select</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="dropdowns.html">
+                        Dropdowns
+                        <span class="visually-hidden">navigation menu submenu overlay links dropend dropstart dropup</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="filter-widgets.html">
+                        Filter widgets
+                        <span class="visually-hidden">sidebar sort</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="forms.html">
+                        Forms
+                        <span class="visually-hidden">input select textarea checkbox radio range slider picker floating label validation control file switch quantity</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="image-comparison-slider.html">
+                        Image comparison slider
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="input-group.html">
+                        Input group
+                        <span class="visually-hidden">form control select textarea addon</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="input-formatter.html">
+                        Input text formatter
+                        <span class="visually-hidden">form control mask</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="lightbox.html">
+                        Lightbox (Gallery)
+                        <span class="visually-hidden">popup modal overlay image picture video youtube vimeo iframe</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="list-group.html">
+                        List group
+                        <span class="visually-hidden">navigation links menu ordered unordered</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="listing-cards.html">
+                        Listing cards
+                        <span class="visually-hidden">product service item entry summary</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="map.html">
+                        Map
+                        <span class="visually-hidden">location directions</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="modal.html">
+                        Modal
+                        <span class="visually-hidden">dialog popup overlay lightbox</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="nav-links.html">
+                        Nav links
+                        <span class="visually-hidden">navigation menu links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="navbar.html">
+                        Navbar
+                        <span class="visually-hidden">header navigation menu submenu links brand logo</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="offcanvas.html">
+                        Offcanvas
+                        <span class="visually-hidden">drawer overlay sidebar</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="pagination.html">
+                        Pagination
+                        <span class="visually-hidden">pager navigation links</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="pills.html">
+                        Pills
+                        <span class="visually-hidden">navigation links tabs</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="placeholders.html">
+                        Placeholders
+                        <span class="visually-hidden">loading loader</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="popovers.html">
+                        Popovers
+                        <span class="visually-hidden">tooltip overlay popup</span>
+</a>
+</div><div class="dropdown">
+<span class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3 pe-none active">
+                        Pricing
+                        <span class="visually-hidden">price cost subscription membership payment tier plan package</span>
+</span>
+<ul class="nav nav-underline flex-column border-start ms-2 my-2" id="anchorNav" style="gap: .25rem;">
+<li class="nav-item"><a class="nav-link fw-normal active" href="#pricing-basic">Basic pricing plan</a></li>
+<li class="nav-item"><a class="nav-link fw-normal" href="#pricing-featured">Featured pricing plan</a></li>
+</ul>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="progress.html">
+                        Progress
+                        <span class="visually-hidden">bars status circular</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="reviews.html">
+                        Reviews
+                        <span class="visually-hidden">testimonials feedback stars rating</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="scrollbar.html">
+                        Scrollbar
+                      </a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="scrollspy.html">
+                        Scrollspy
+                        <span class="visually-hidden">anchor links navigation menu</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="select-box.html">
+                        Select box
+                        <span class="visually-hidden">tags choices input form multiple control</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="spinners.html">
+                        Spinners
+                        <span class="visually-hidden">loading loader</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tabs.html">
+                        Tabs
+                        <span class="visually-hidden">navigation links underline</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="toasts.html">
+                        Toasts
+                        <span class="visually-hidden">notification overlay popup alert feedback</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="tooltips.html">
+                        Tooltips
+                        <span class="visually-hidden">overlay popup popover</span>
+</a>
+</div><h3 class="h6 d-flex align-items-center border-top pt-4 pb-1 mt-3 mb-2">
+<i class="fi-tool fs-lg text-warning me-2"></i>
+                      Utilities &amp; helpers
+                    </h3><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="utilities.html">
+                        Finder utilities
+                        <span class="visually-hidden">border background cursor</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="https://getbootstrap.com/docs/5.3/utilities/background/" rel="noreferrer" target="_blank">
+                        Bootstrap utilities
+                        <span class="visually-hidden">border background color text font size position weight display opacity flex space spacing align visibility overflow object float shadow</span>
+</a>
+</div><div class="dropend">
+<a class="list-group-item list-group-item-action justify-content-between dropdown-toggle pe-3" href="https://getbootstrap.com/docs/5.3/helpers/clearfix/" rel="noreferrer" target="_blank">
+                        Bootstrap helpers
+                        <span class="visually-hidden">position ratio stacks stretched link focus truncation rule</span>
+</a>
+</div></nav>
+</div></div></div></div><div class="simplebar-placeholder" style="width: 294px; height: 3328px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 228px; transform: translate3d(0px, 644px, 0px); display: block;"></div></div></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Page content -->
+<main class="col-lg-9 pt-1 pb-5 mb-sm-2 mb-md-3">
+<!-- Page title -->
+<section class="py-2 pb-sm-3">
+<span class="badge d-inline-flex align-items-center text-info bg-info-subtle fw-semibold text-decoration-none py-2 px-3 mb-2 rounded-pill">Finder component</span>
+<h1 class="pt-1">Pricing</h1>
+<p class="text-body-secondary mb-4">Quickly build pricing plans for subscription based pricing model.</p>
+</section>
+<!-- Basic pricing plan -->
+<section class="docs-section pb-sm-2 mb-5" id="pricing-basic">
+<h4>Basic pricing plan</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-1" aria-selected="true" class="nav-link active" data-bs-target="#preview-1" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-1" aria-selected="false" class="nav-link" data-bs-target="#html-1" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-4 pb-2 mt-3 fade show active" id="preview-1" role="tabpanel">
+<div class="card bg-body-tertiary border-0 rounded-5 p-3" style="max-width: 416px">
+<div class="card-body p-2 p-xl-3">
+<svg class="d-block mb-3 mb-xl-4" fill="none" height="56" width="56" xmlns="http://www.w3.org/2000/svg"><path class="text-primary" d="M51.729 34.356c.085-.254.17-.508.17-.763-2.119 9.068-9.237 16.187-18.305 18.305.254-.085.508-.085.678-.169l-3.475-13.051a10.99 10.99 0 0 0 7.797-7.797l13.136 3.475zm.169-12.034c-.085-.254-.085-.508-.169-.763l-13.051 3.475a10.99 10.99 0 0 0-7.797-7.797l3.475-13.051c-.254-.085-.508-.085-.678-.17 8.983 2.203 16.102 9.322 18.22 18.305zM21.644 4.271l3.475 13.051a10.99 10.99 0 0 0-7.797 7.797L4.271 21.644c-.085.254-.085.509-.17.763C6.22 13.339 13.339 6.22 22.406 4.102c-.254 0-.509.085-.763.17zm3.475 34.407l-3.559 13.136c.254.085.508.085.763.169-9.068-2.119-16.186-9.237-18.305-18.305.085.254.085.508.17.763l13.051-3.475c1.102 3.644 4.153 6.695 7.881 7.712z" fill="currentColor"></path><path class="text-secondary-emphasis" d="M45.797 53h-5.085a.4.4 0 1 1 0-.847h5.085c3.475 0 6.356-2.881 6.356-6.356v-5.085a.4.4 0 1 1 .847 0v5.085A7.2 7.2 0 0 1 45.797 53zM28 53c-2.203 0-4.322-.254-6.441-.847-.254-.085-.339-.254-.339-.508l3.39-12.712c-3.644-1.102-6.441-3.983-7.542-7.542L4.356 34.78c-.254.085-.424-.085-.508-.339C3.254 32.322 3 30.203 3 28s.254-4.322.847-6.441c.085-.254.254-.339.508-.339l12.712 3.39c1.102-3.644 3.983-6.441 7.542-7.542L21.22 4.356c-.085-.254.085-.424.339-.508C23.678 3.254 25.797 3 28 3s4.322.254 6.441.847c.254.085.339.254.339.508l-3.39 12.712c3.644 1.102 6.441 3.983 7.542 7.542l12.712-3.39c.254-.085.424.085.509.339.593 2.119.847 4.237.847 6.441s-.254 4.322-.847 6.441c-.085.254-.254.339-.509.339l-12.712-3.39c-1.102 3.644-3.983 6.441-7.542 7.542l3.39 12.712c.085.254-.085.424-.339.509-2.119.593-4.237.847-6.441.847zm-5.847-1.525c1.949.508 3.814.678 5.848.678s3.898-.254 5.847-.678l-3.305-12.288c-1.61.339-3.475.339-5.085 0l-3.305 12.288zm3.136-13.22a11.73 11.73 0 0 0 5.424 0c3.644-1.017 6.441-3.813 7.458-7.457.254-.848.339-1.78.339-2.712s-.085-1.864-.339-2.712c-1.017-3.644-3.814-6.441-7.458-7.458a11.73 11.73 0 0 0-5.424 0c-3.644 1.017-6.441 3.814-7.458 7.458-.254.847-.339 1.78-.339 2.712s.085 1.864.339 2.712c.932 3.559 3.813 6.441 7.458 7.457zm13.898-7.712l12.288 3.305c.508-1.949.678-3.814.678-5.847s-.254-3.898-.678-5.847l-12.288 3.305c.169.847.254 1.695.254 2.542s-.085 1.695-.254 2.542zm-34.661-8.39c-.508 1.949-.678 3.814-.678 5.848s.254 3.898.678 5.847l12.288-3.305c-.17-.847-.254-1.695-.254-2.542s.085-1.695.254-2.542L4.525 22.153zM22.153 4.525l3.305 12.288c1.61-.339 3.475-.339 5.085 0l3.305-12.288c-1.949-.508-3.814-.678-5.847-.678s-3.898.254-5.847.678zM15.288 53h-5.085A7.2 7.2 0 0 1 3 45.797v-5.085a.4.4 0 0 1 .424-.424.4.4 0 0 1 .424.424v5.085c0 3.475 2.881 6.356 6.356 6.356h5.085a.4.4 0 1 1 0 .847zm22.034-1.864c-.169 0-.339-.085-.424-.254-.085-.254 0-.424.254-.593 5.932-2.458 10.763-7.203 13.22-13.136.085-.254.339-.339.593-.254s.339.339.254.593c-2.542 6.102-7.542 11.102-13.644 13.644h-.254zm-18.644 0h-.169c-6.102-2.542-11.102-7.542-13.644-13.644-.085-.254 0-.424.254-.593.254-.085.424 0 .593.254 2.458 5.932 7.203 10.763 13.136 13.22.254.085.339.339.254.593a.65.65 0 0 1-.424.169zm32.034-32.034c-.17 0-.339-.085-.424-.254-2.458-5.932-7.203-10.763-13.136-13.22-.254-.085-.339-.339-.254-.593s.339-.339.593-.254c6.102 2.542 11.102 7.458 13.644 13.644.085.254 0 .424-.254.593 0 .085-.085.085-.169.085zm-45.424 0h-.17c-.254-.085-.339-.339-.254-.593 2.542-6.102 7.542-11.102 13.644-13.644.254-.085.424 0 .593.254.085.254 0 .424-.254.593-5.932 2.458-10.763 7.203-13.22 13.136 0 .169-.169.254-.339.254zm47.288-3.39a.4.4 0 0 1-.424-.424v-5.085c0-3.475-2.881-6.356-6.356-6.356h-5.085a.4.4 0 0 1-.424-.424.4.4 0 0 1 .424-.424h5.085A7.2 7.2 0 0 1 53 10.203v5.085a.4.4 0 0 1-.424.424zm-49.152 0A.4.4 0 0 1 3 15.288v-5.085A7.2 7.2 0 0 1 10.203 3h5.085a.4.4 0 0 1 .424.424.4.4 0 0 1-.424.424h-5.085c-3.475 0-6.356 2.881-6.356 6.356v5.085a.4.4 0 0 1-.424.424z" fill="currentColor"></path></svg>
+<h3 class="fs-lg fw-normal">Easy Start</h3>
+<div class="d-flex align-items-center pb-1 pb-xl-0 mb-2 mb-xl-3">
+<div class="h1 mb-0">$25</div>
+<div class="fs-sm ms-2">/ month</div>
+</div>
+<p class="fs-sm mb-xl-4">Ideal if you're testing the waters and want to start with basic exposure.</p>
+<button class="btn btn-lg btn-outline-info w-100" type="button">Select Easy Start</button>
+<ul class="list-unstyled gap-md-3 fs-sm text-dark-emphasis pt-4 mt-lg-1 mt-xl-2 mb-0">
+<li class="d-flex">
+<i class="fi-check fs-base text-body-secondary me-2" style="margin-top: 3px"></i>
+                            7-Day Run for your ad active for one weeks
+                          </li>
+<li class="d-flex">
+<i class="fi-check fs-base text-body-secondary me-2" style="margin-top: 3px"></i>
+                            Keep your ad live and active for one week
+                          </li>
+<li class="d-flex">
+<i class="fi-check fs-base text-body-secondary me-2" style="margin-top: 3px"></i>
+                            Track views and basic engagement metrics
+                          </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-1" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#pricing-basic-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="pricing-basic-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Basic pricing plan --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card bg-body-tertiary border-0 rounded-5 p-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card-body p-2 p-xl-3"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-block mb-3 mb-xl-4"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"56"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"56"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-primary"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M51.729 34.356c.085-.254.17-.508.17-.763-2.119 9.068-9.237 16.187-18.305 18.305.254-.085.508-.085.678-.169l-3.475-13.051a10.99 10.99 0 0 0 7.797-7.797l13.136 3.475zm.169-12.034c-.085-.254-.085-.508-.169-.763l-13.051 3.475a10.99 10.99 0 0 0-7.797-7.797l3.475-13.051c-.254-.085-.508-.085-.678-.17 8.983 2.203 16.102 9.322 18.22 18.305zM21.644 4.271l3.475 13.051a10.99 10.99 0 0 0-7.797 7.797L4.271 21.644c-.085.254-.085.509-.17.763C6.22 13.339 13.339 6.22 22.406 4.102c-.254 0-.509.085-.763.17zm3.475 34.407l-3.559 13.136c.254.085.508.085.763.169-9.068-2.119-16.186-9.237-18.305-18.305.085.254.085.508.17.763l13.051-3.475c1.102 3.644 4.153 6.695 7.881 7.712z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"currentColor"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-secondary-emphasis"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M45.797 53h-5.085a.4.4 0 1 1 0-.847h5.085c3.475 0 6.356-2.881 6.356-6.356v-5.085a.4.4 0 1 1 .847 0v5.085A7.2 7.2 0 0 1 45.797 53zM28 53c-2.203 0-4.322-.254-6.441-.847-.254-.085-.339-.254-.339-.508l3.39-12.712c-3.644-1.102-6.441-3.983-7.542-7.542L4.356 34.78c-.254.085-.424-.085-.508-.339C3.254 32.322 3 30.203 3 28s.254-4.322.847-6.441c.085-.254.254-.339.508-.339l12.712 3.39c1.102-3.644 3.983-6.441 7.542-7.542L21.22 4.356c-.085-.254.085-.424.339-.508C23.678 3.254 25.797 3 28 3s4.322.254 6.441.847c.254.085.339.254.339.508l-3.39 12.712c3.644 1.102 6.441 3.983 7.542 7.542l12.712-3.39c.254-.085.424.085.509.339.593 2.119.847 4.237.847 6.441s-.254 4.322-.847 6.441c-.085.254-.254.339-.509.339l-12.712-3.39c-1.102 3.644-3.983 6.441-7.542 7.542l3.39 12.712c.085.254-.085.424-.339.509-2.119.593-4.237.847-6.441.847zm-5.847-1.525c1.949.508 3.814.678 5.848.678s3.898-.254 5.847-.678l-3.305-12.288c-1.61.339-3.475.339-5.085 0l-3.305 12.288zm3.136-13.22a11.73 11.73 0 0 0 5.424 0c3.644-1.017 6.441-3.813 7.458-7.457.254-.848.339-1.78.339-2.712s-.085-1.864-.339-2.712c-1.017-3.644-3.814-6.441-7.458-7.458a11.73 11.73 0 0 0-5.424 0c-3.644 1.017-6.441 3.814-7.458 7.458-.254.847-.339 1.78-.339 2.712s.085 1.864.339 2.712c.932 3.559 3.813 6.441 7.458 7.457zm13.898-7.712l12.288 3.305c.508-1.949.678-3.814.678-5.847s-.254-3.898-.678-5.847l-12.288 3.305c.169.847.254 1.695.254 2.542s-.085 1.695-.254 2.542zm-34.661-8.39c-.508 1.949-.678 3.814-.678 5.848s.254 3.898.678 5.847l12.288-3.305c-.17-.847-.254-1.695-.254-2.542s.085-1.695.254-2.542L4.525 22.153zM22.153 4.525l3.305 12.288c1.61-.339 3.475-.339 5.085 0l3.305-12.288c-1.949-.508-3.814-.678-5.847-.678s-3.898.254-5.847.678zM15.288 53h-5.085A7.2 7.2 0 0 1 3 45.797v-5.085a.4.4 0 0 1 .424-.424.4.4 0 0 1 .424.424v5.085c0 3.475 2.881 6.356 6.356 6.356h5.085a.4.4 0 1 1 0 .847zm22.034-1.864c-.169 0-.339-.085-.424-.254-.085-.254 0-.424.254-.593 5.932-2.458 10.763-7.203 13.22-13.136.085-.254.339-.339.593-.254s.339.339.254.593c-2.542 6.102-7.542 11.102-13.644 13.644h-.254zm-18.644 0h-.169c-6.102-2.542-11.102-7.542-13.644-13.644-.085-.254 0-.424.254-.593.254-.085.424 0 .593.254 2.458 5.932 7.203 10.763 13.136 13.22.254.085.339.339.254.593a.65.65 0 0 1-.424.169zm32.034-32.034c-.17 0-.339-.085-.424-.254-2.458-5.932-7.203-10.763-13.136-13.22-.254-.085-.339-.339-.254-.593s.339-.339.593-.254c6.102 2.542 11.102 7.458 13.644 13.644.085.254 0 .424-.254.593 0 .085-.085.085-.169.085zm-45.424 0h-.17c-.254-.085-.339-.339-.254-.593 2.542-6.102 7.542-11.102 13.644-13.644.254-.085.424 0 .593.254.085.254 0 .424-.254.593-5.932 2.458-10.763 7.203-13.22 13.136 0 .169-.169.254-.339.254zm47.288-3.39a.4.4 0 0 1-.424-.424v-5.085c0-3.475-2.881-6.356-6.356-6.356h-5.085a.4.4 0 0 1-.424-.424.4.4 0 0 1 .424-.424h5.085A7.2 7.2 0 0 1 53 10.203v5.085a.4.4 0 0 1-.424.424zm-49.152 0A.4.4 0 0 1 3 15.288v-5.085A7.2 7.2 0 0 1 10.203 3h5.085a.4.4 0 0 1 .424.424.4.4 0 0 1-.424.424h-5.085c-3.475 0-6.356 2.881-6.356 6.356v5.085a.4.4 0 0 1-.424.424z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"currentColor"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fs-lg fw-normal"</span>&gt;</span>Easy Start<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-center pb-1 pb-xl-0 mb-2 mb-xl-3"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h1 mb-0"</span>&gt;</span>$25<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fs-sm ms-2"</span>&gt;</span>/ month<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fs-sm mb-xl-4"</span>&gt;</span>Ideal if you're testing the waters and want to start with basic exposure.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-lg btn-outline-info w-100"</span>&gt;</span>Select Easy Start<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-unstyled gap-md-3 fs-sm text-dark-emphasis pt-4 mt-lg-1 mt-xl-2 mb-0"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-check fs-base text-body-secondary me-2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin-top: 3px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        7-Day Run for your ad active for one weeks
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-check fs-base text-body-secondary me-2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin-top: 3px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        Keep your ad live and active for one week
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-check fs-base text-body-secondary me-2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin-top: 3px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        Track views and basic engagement metrics
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured pricing plan -->
+<section class="docs-section" id="pricing-featured">
+<h4>Featured pricing plan</h4>
+<div class="card border-0 shadow">
+<span class="d-none d-block-dark position-absolute top-0 start-0 w-100 h-100 bg-dark rounded opacity-50"></span>
+<div class="card-body position-relative z-2">
+<ul class="nav nav-tabs m-n2" role="tablist" style="max-width: 240px">
+<li class="nav-item" role="presentation">
+<button aria-controls="preview-2" aria-selected="true" class="nav-link active" data-bs-target="#preview-2" data-bs-toggle="tab" role="tab" type="button">
+<i class="fi-eye opacity-75 ms-n1 me-2"></i>
+                      Preview
+                    </button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="html-2" aria-selected="false" class="nav-link" data-bs-target="#html-2" data-bs-toggle="tab" role="tab" tabindex="-1" type="button">
+<i class="fi-code opacity-75 ms-n1 me-2"></i>
+                      HTML
+                    </button>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane pt-5 pb-2 mt-3 fade show active" id="preview-2" role="tabpanel">
+<div class="position-relative" style="max-width: 416px">
+<div class="card position-relative z-2 bg-body-tertiary border-0 rounded-5 p-3">
+<div class="card-body p-2 p-xl-3">
+<svg class="d-block mb-3 mb-xl-4" fill="none" height="56" width="56" xmlns="http://www.w3.org/2000/svg"><path class="text-info" d="M44.136 9.966c5.79 4.746 9.491 11.864 9.491 19.932 0 14.142-11.485 25.627-25.627 25.627S2.373 44.041 2.373 29.898 13.858 4.271 28 4.271v5.695c-11.01 0-19.932 8.922-19.932 19.932S16.99 49.831 28 49.831s19.932-8.922 19.932-19.932c0-7.973-4.746-14.807-11.485-18.034h.095 7.593V9.966z" fill="currentColor"></path><path class="text-primary" d="M44.136 9.966v1.898h-7.593V9.966 2.373h7.593v7.593z" fill="currentColor"></path><path class="text-info" d="M28 21.356c-4.746 0-8.542 3.797-8.542 8.542s3.797 8.542 8.542 8.542 8.542-3.797 8.542-8.542-3.796-8.542-8.542-8.542zm0-5.695a14.22 14.22 0 0 1 14.237 14.237A14.22 14.22 0 0 1 28 44.136a14.22 14.22 0 0 1-14.237-14.237A14.22 14.22 0 0 1 28 15.661z" fill="currentColor"></path><path class="text-primary" d="M36.543 2.373v7.593h-.949-7.593V4.271.475h8.542v1.898zM28 27.051c1.614 0 2.847 1.234 2.847 2.848S29.614 32.746 28 32.746s-2.847-1.234-2.847-2.848 1.234-2.847 2.848-2.847z" fill="currentColor"></path><path class="text-secondary-emphasis" d="M28 56A26.09 26.09 0 0 1 1.898 29.898c0-14.237 11.485-25.817 25.627-26.102V.475c0-.285.19-.475.475-.475h8.542c.285 0 .475.19.475.475V11.39h6.644V2.847h-3.322c-.285 0-.475-.19-.475-.475s.19-.475.475-.475h3.797c.285 0 .475.19.475.475v9.491c0 .285-.19.475-.475.475h-7.593c-.285 0-.475-.19-.475-.475v-1.424h-4.271c-.285 0-.475-.19-.475-.475s.19-.475.475-.475h4.271V.949h-7.593v28.949c0 .285-.19.475-.475.475s-.475-.19-.475-.475V27.62c-1.044.19-1.898 1.139-1.898 2.278A2.35 2.35 0 0 0 28 32.271a2.35 2.35 0 0 0 2.373-2.373c0-.285.19-.475.475-.475s.475.19.475.475c0 1.803-1.519 3.322-3.322 3.322s-3.322-1.519-3.322-3.322c0-1.708 1.234-3.037 2.847-3.322V21.83c-4.271.285-7.593 3.797-7.593 8.068A8.06 8.06 0 0 0 28 37.966c4.461 0 8.068-3.607 8.068-8.068 0-3.132-1.709-5.885-4.461-7.213-.19-.095-.285-.38-.19-.664.095-.19.38-.285.664-.19 3.132 1.519 5.031 4.651 5.031 8.068 0 4.936-4.081 9.017-9.017 9.017s-9.016-4.081-9.016-9.017c0-4.841 3.797-8.732 8.542-9.017v-4.746c-7.403.285-13.288 6.359-13.288 13.763 0 7.593 6.169 13.763 13.763 13.763s13.763-6.169 13.763-13.763c0-5.79-3.702-11.01-9.207-13.003-.285-.095-.38-.38-.285-.57s.38-.38.569-.285c5.885 2.088 9.776 7.688 9.776 13.858 0 8.068-6.644 14.712-14.712 14.712s-14.712-6.644-14.712-14.712c0-7.973 6.359-14.427 14.237-14.712v-4.746c-10.536.285-18.983 8.922-18.983 19.458 0 10.725 8.732 19.458 19.458 19.458s19.458-8.732 19.458-19.458c0-5.315-2.088-10.251-5.885-13.858-.19-.19-.19-.475 0-.664a.46.46 0 0 1 .664 0c3.986 3.892 6.17 9.017 6.17 14.617A20.38 20.38 0 0 1 28 50.4 20.38 20.38 0 0 1 7.593 29.993c0-11.105 8.922-20.122 19.932-20.407V4.841c-13.668.285-24.678 11.39-24.678 25.153 0 13.858 11.295 25.152 25.153 25.152s25.153-11.295 25.153-25.152a25.23 25.23 0 0 0-5.6-15.851c-.19-.19-.095-.475.095-.664s.475-.095.664.095c3.797 4.651 5.79 10.441 5.79 16.42C54.102 44.325 42.427 56 28 56z" fill="currentColor"></path></svg>
+<h3 class="fs-lg fw-normal">Fast Sale</h3>
+<div class="d-flex align-items-center pb-1 pb-xl-0 mb-2 mb-xl-3">
+<div class="h1 mb-0">$49</div>
+<div class="fs-sm ms-2">/ month</div>
+</div>
+<p class="fs-sm mb-xl-4">Perfect for serious sellers who want more exposure and detailed insights.</p>
+<button class="btn btn-lg btn-info w-100" type="button">Select Fast Sale</button>
+<div class="h6 fs-sm pt-4 mt-lg-1 mt-xl-2">Includes everything in Easy Start +</div>
+<ul class="list-unstyled gap-md-3 fs-sm text-dark-emphasis mb-0">
+<li class="d-flex">
+<i class="fi-check fs-base text-body-secondary me-2" style="margin-top: 3px"></i>
+                              14-Day Run for your ad active for two weeks
+                            </li>
+<li class="d-flex">
+<i class="fi-check fs-base text-body-secondary me-2" style="margin-top: 3px"></i>
+                              Detailed user engagement analytics
+                            </li>
+<li class="d-flex">
+<i class="fi-check fs-base text-body-secondary me-2" style="margin-top: 3px"></i>
+                              Dedicated assistance from our support team
+                            </li>
+</ul>
+</div>
+</div>
+<div class="position-absolute top-0 start-0 w-100 z-1 fs-sm fw-semibold text-white text-center" style="margin-top: -27px">Recommended</div>
+<div class="position-absolute top-0 start-0 bg-info rounded-5 ms-n1" style="width: calc(100% + 8px); height: calc(100% + 36px); margin-top: -32px"></div>
+</div>
+</div>
+<div class="tab-pane pt-4 fade" id="html-2" role="tabpanel">
+<div class="position-relative" data-bs-theme="dark">
+<button class="btn btn-sm btn-outline-secondary bg-dark position-absolute top-0 end-0 mt-2 px-2 z-3" data-copy-code="#pricing-featured-code" type="button">
+<i class="fi-copy fs-sm me-1"></i>
+                        Copy
+                      </button>
+<pre class="code-highlight mx-n2 mb-n2" id="pricing-featured-code"><code class="language-html hljs language-xml" data-highlighted="yes"><span class="hljs-comment">&lt;!-- Featured pricing plan --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"position-relative"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card position-relative z-2 bg-body-tertiary border-0 rounded-5 p-3"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card-body p-2 p-xl-3"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-block mb-3 mb-xl-4"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"56"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"56"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-info"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M44.136 9.966c5.79 4.746 9.491 11.864 9.491 19.932 0 14.142-11.485 25.627-25.627 25.627S2.373 44.041 2.373 29.898 13.858 4.271 28 4.271v5.695c-11.01 0-19.932 8.922-19.932 19.932S16.99 49.831 28 49.831s19.932-8.922 19.932-19.932c0-7.973-4.746-14.807-11.485-18.034h.095 7.593V9.966z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"currentColor"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-primary"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M44.136 9.966v1.898h-7.593V9.966 2.373h7.593v7.593z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"currentColor"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-info"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M28 21.356c-4.746 0-8.542 3.797-8.542 8.542s3.797 8.542 8.542 8.542 8.542-3.797 8.542-8.542-3.796-8.542-8.542-8.542zm0-5.695a14.22 14.22 0 0 1 14.237 14.237A14.22 14.22 0 0 1 28 44.136a14.22 14.22 0 0 1-14.237-14.237A14.22 14.22 0 0 1 28 15.661z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"currentColor"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-primary"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M36.543 2.373v7.593h-.949-7.593V4.271.475h8.542v1.898zM28 27.051c1.614 0 2.847 1.234 2.847 2.848S29.614 32.746 28 32.746s-2.847-1.234-2.847-2.848 1.234-2.847 2.848-2.847z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"currentColor"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-secondary-emphasis"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M28 56A26.09 26.09 0 0 1 1.898 29.898c0-14.237 11.485-25.817 25.627-26.102V.475c0-.285.19-.475.475-.475h8.542c.285 0 .475.19.475.475V11.39h6.644V2.847h-3.322c-.285 0-.475-.19-.475-.475s.19-.475.475-.475h3.797c.285 0 .475.19.475.475v9.491c0 .285-.19.475-.475.475h-7.593c-.285 0-.475-.19-.475-.475v-1.424h-4.271c-.285 0-.475-.19-.475-.475s.19-.475.475-.475h4.271V.949h-7.593v28.949c0 .285-.19.475-.475.475s-.475-.19-.475-.475V27.62c-1.044.19-1.898 1.139-1.898 2.278A2.35 2.35 0 0 0 28 32.271a2.35 2.35 0 0 0 2.373-2.373c0-.285.19-.475.475-.475s.475.19.475.475c0 1.803-1.519 3.322-3.322 3.322s-3.322-1.519-3.322-3.322c0-1.708 1.234-3.037 2.847-3.322V21.83c-4.271.285-7.593 3.797-7.593 8.068A8.06 8.06 0 0 0 28 37.966c4.461 0 8.068-3.607 8.068-8.068 0-3.132-1.709-5.885-4.461-7.213-.19-.095-.285-.38-.19-.664.095-.19.38-.285.664-.19 3.132 1.519 5.031 4.651 5.031 8.068 0 4.936-4.081 9.017-9.017 9.017s-9.016-4.081-9.016-9.017c0-4.841 3.797-8.732 8.542-9.017v-4.746c-7.403.285-13.288 6.359-13.288 13.763 0 7.593 6.169 13.763 13.763 13.763s13.763-6.169 13.763-13.763c0-5.79-3.702-11.01-9.207-13.003-.285-.095-.38-.38-.285-.57s.38-.38.569-.285c5.885 2.088 9.776 7.688 9.776 13.858 0 8.068-6.644 14.712-14.712 14.712s-14.712-6.644-14.712-14.712c0-7.973 6.359-14.427 14.237-14.712v-4.746c-10.536.285-18.983 8.922-18.983 19.458 0 10.725 8.732 19.458 19.458 19.458s19.458-8.732 19.458-19.458c0-5.315-2.088-10.251-5.885-13.858-.19-.19-.19-.475 0-.664a.46.46 0 0 1 .664 0c3.986 3.892 6.17 9.017 6.17 14.617A20.38 20.38 0 0 1 28 50.4 20.38 20.38 0 0 1 7.593 29.993c0-11.105 8.922-20.122 19.932-20.407V4.841c-13.668.285-24.678 11.39-24.678 25.153 0 13.858 11.295 25.152 25.153 25.152s25.153-11.295 25.153-25.152a25.23 25.23 0 0 0-5.6-15.851c-.19-.19-.095-.475.095-.664s.475-.095.664.095c3.797 4.651 5.79 10.441 5.79 16.42C54.102 44.325 42.427 56 28 56z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"currentColor"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fs-lg fw-normal"</span>&gt;</span>Fast Sale<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-center pb-1 pb-xl-0 mb-2 mb-xl-3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h1 mb-0"</span>&gt;</span>$49<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fs-sm ms-2"</span>&gt;</span>/ month<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fs-sm mb-xl-4"</span>&gt;</span>Perfect for serious sellers who want more exposure and detailed insights.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-lg btn-info w-100"</span>&gt;</span>Select Fast Sale<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h6 fs-sm pt-4 mt-lg-1 mt-xl-2"</span>&gt;</span>Includes everything in Easy Start +<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-unstyled gap-md-3 fs-sm text-dark-emphasis mb-0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-check fs-base text-body-secondary me-2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin-top: 3px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+          14-Day Run for your ad active for two weeks
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-check fs-base text-body-secondary me-2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin-top: 3px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+          Detailed user engagement analytics
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fi-check fs-base text-body-secondary me-2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin-top: 3px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+          Dedicated assistance from our support team
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"position-absolute top-0 start-0 w-100 z-1 fs-sm fw-semibold text-white text-center"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"margin-top: -27px"</span>&gt;</span>Recommended<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"position-absolute top-0 start-0 bg-info rounded-5 ms-n1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: calc(100% + 8px); height: calc(100% + 36px); margin-top: -32px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+<!-- Back to top button -->
+<div class="floating-buttons position-fixed top-50 end-0 z-sticky me-3 me-xl-4 pb-4">
+<a class="btn-scroll-top btn btn-sm bg-body border-0 rounded-pill shadow animate-slide-end" href="#top">
+        Top
+        <i class="fi-arrow-right fs-base ms-1 me-n1 animate-target"></i>
+<span class="position-absolute top-0 start-0 w-100 h-100 border rounded-pill z-0"></span>
+<svg class="position-absolute top-0 start-0 w-100 h-100 z-1" fill="none" viewbox="0 0 62 32" xmlns="http://www.w3.org/2000/svg">
+<rect height="30.5" rx="15.25" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5" style="stroke-dasharray: 155.201; stroke-dashoffset: 155.201;" width="60.5" x=".75" y=".75"></rect>
+</svg>
+</a>
+<a aria-controls="customizer" class="btn btn-sm btn-outline-secondary text-uppercase bg-body rounded-pill shadow animate-rotate ms-2 me-n5" data-bs-toggle="offcanvas" href="#customizer" role="button" style="font-size: .625rem; letter-spacing: .05rem;">
+        Customize<i class="fi-settings fs-base ms-1 me-n2 animate-target"></i>
+</a>
+</div>
+<!-- Vendor scripts -->
+<script src="../ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/vendor/simplebar/simplebar.min.js"></script>
+<script src="../assets/vendor/list.js/list.min.js"></script>
+<!-- Bootstrap + Theme scripts -->
+<script src="../assets/js/theme.min.js"></script>
+<!-- Docs specific scripts -->
+<script>
+      const sidebar = new bootstrap.Offcanvas('#sidebarNav')
+      const closeSidebar = () => {
+        setTimeout(() => {
+          sidebar.hide()
+        }, 500)
+      }
+      (() => {
+        const scrollable = document.getElementById('scrollable')
+        const simplebar = new SimpleBar(scrollable)
+        const anchor = scrollable.querySelector('.list-group-item.active')
+        if (anchor === null) return
+        simplebar.getScrollElement().scrollTo({
+          top: anchor.parentNode.offsetTop,
+          behavior: 'instant'
+        })
+      })()
+    </script>
+</body></html>

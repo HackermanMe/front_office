@@ -1,13 +1,70 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>FrontOffice</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Webmanifest + Favicon / App icons -->
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <link href="manifest.json" rel="manifest" />
+  <link href="assets/app-icons/icon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="assets/app-icons/icon-180x180.png" rel="apple-touch-icon" />
+  <!-- Theme switcher (color modes) -->
+  <script src="assets/js/theme-switcher.js"></script>
+  <!-- Preloaded local web font (Inter) -->
+  <link as="font" crossorigin="" href="assets/fonts/inter-variable-latin.woff2" rel="preload" type="font/woff2" />
+  <!-- Font icons -->
+  <link as="font" crossorigin="" href="assets/icons/finder-icons.woff2" rel="preload" type="font/woff2" />
+  <link href="assets/icons/finder-icons.min.css" rel="stylesheet" />
+  <!-- Vendor styles -->
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="assets/vendor/choices.js/choices.min.css" rel="stylesheet" />
+  <link href="assets/vendor/nouislider/nouislider.min.css" rel="stylesheet" />
+  <!-- Bootstrap + Theme styles -->
+  <link as="style" href="assets/css/theme.min.css" rel="preload" />
+  <link as="style" href="assets/css/theme.rtl.min.css" rel="preload" />
+  <link href="assets/css/theme.min.css" id="theme-styles" rel="stylesheet" />
+  <!-- Customizer -->
+  <script src="assets/js/customizer.min.js"></script>
+  <style id="customizer-styles">
+    :root,
+    [data-bs-theme="light"] {}
+
+    [data-bs-theme="dark"] {}
+
+    .btn-primary {}
+
+    .btn-success {}
+
+    .btn-warning {}
+
+    .btn-danger {}
+
+    .btn-info {}
+
+    .btn-outline-primary {}
+
+    .btn-outline-success {}
+
+    .btn-outline-warning {}
+
+    .btn-outline-danger {}
+
+    .btn-outline-info {}
+  </style>
 </head>
+
 <body>
   <app-root></app-root>
+
+  <!-- Vendor scripts -->
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/choices.js/choices.min.js"></script>
+  <script src="assets/vendor/nouislider/nouislider.min.js"></script>
+  <!-- Bootstrap + Theme scripts -->
+  <script src="assets/js/theme.min.js"></script>
 </body>
+
 </html>
